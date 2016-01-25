@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<service xmlns="http://www.activegrid.com/namespaces/ServiceDefinitions/1.0" id="WMSTUDIO" type="DataService" springFile="WMSTUDIO.spring.xml">
+    <operation operationType="nativequery" name="getemps">
+        <parameter name="empid2" typeRef="java.lang.Integer" isList="false"/>
+        <return typeRef="WMSTUDIOgetempsrtnType" isList="false"/>
+    </operation>
+    <dataobjects>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.Jobs">
+            <element name="minSalary" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="maxSalary" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="jobId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="employeeses" typeRef="com.nwissuesjan25.wmstudio.Employees" isList="true" allowNull="true"/>
+            <element name="jobHistories" typeRef="com.nwissuesjan25.wmstudio.JobHistory" isList="true" allowNull="true"/>
+            <element name="jobTitle" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.EmpDetailsView">
+            <element name="employeeId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="countryId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="lastName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="countryName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="jobId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="regionName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="locationId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="departmentName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="city" typeRef="java.lang.String" allowNull="true"/>
+            <element name="managerId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="stateProvince" typeRef="java.lang.String" allowNull="true"/>
+            <element name="departmentId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="salary" typeRef="java.math.BigDecimal" allowNull="true"/>
+            <element name="commissionPct" typeRef="java.math.BigDecimal" allowNull="true"/>
+            <element name="firstName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="jobTitle" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.Countries">
+            <element name="countryId" typeRef="java.lang.String" allowNull="true"/>
+            <element name="countryName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="locationses" typeRef="com.nwissuesjan25.wmstudio.Locations" isList="true" allowNull="true"/>
+            <element name="regions" typeRef="com.nwissuesjan25.wmstudio.Regions" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.Table10">
+            <element name="id" typeRef="java.math.BigDecimal" allowNull="true"/>
+            <element name="column2" typeRef="java.sql.Blob" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.Departments">
+            <element name="locations" typeRef="com.nwissuesjan25.wmstudio.Locations" allowNull="true"/>
+            <element name="employeesesForDepartmentId" typeRef="com.nwissuesjan25.wmstudio.Employees" isList="true" allowNull="true"/>
+            <element name="departmentId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="employeesByManagerId" typeRef="com.nwissuesjan25.wmstudio.Employees" allowNull="true"/>
+            <element name="jobHistories" typeRef="com.nwissuesjan25.wmstudio.JobHistory" isList="true" allowNull="true"/>
+            <element name="departmentName" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.Locations">
+            <element name="streetAddress" typeRef="java.lang.String" allowNull="true"/>
+            <element name="postalCode" typeRef="java.lang.String" allowNull="true"/>
+            <element name="locationId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="stateProvince" typeRef="java.lang.String" allowNull="true"/>
+            <element name="countries" typeRef="com.nwissuesjan25.wmstudio.Countries" allowNull="true"/>
+            <element name="departmentses" typeRef="com.nwissuesjan25.wmstudio.Departments" isList="true" allowNull="true"/>
+            <element name="city" typeRef="java.lang.String" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.Employees">
+            <element name="employeeId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="lastName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="jobs" typeRef="com.nwissuesjan25.wmstudio.Jobs" allowNull="true"/>
+            <element name="employeesesForManagerId" typeRef="com.nwissuesjan25.wmstudio.Employees" isList="true" allowNull="true"/>
+            <element name="hireDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="departmentsByDepartmentId" typeRef="com.nwissuesjan25.wmstudio.Departments" allowNull="true"/>
+            <element name="phoneNumber" typeRef="java.lang.String" allowNull="true"/>
+            <element name="email" typeRef="java.lang.String" allowNull="true"/>
+            <element name="salary" typeRef="java.math.BigDecimal" allowNull="true"/>
+            <element name="commissionPct" typeRef="java.math.BigDecimal" allowNull="true"/>
+            <element name="firstName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="jobHistories" typeRef="com.nwissuesjan25.wmstudio.JobHistory" isList="true" allowNull="true"/>
+            <element name="employeesByManagerId" typeRef="com.nwissuesjan25.wmstudio.Employees" allowNull="true"/>
+            <element name="departmentsesForManagerId" typeRef="com.nwissuesjan25.wmstudio.Departments" isList="true" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.Regions">
+            <element name="regionName" typeRef="java.lang.String" allowNull="true"/>
+            <element name="countrieses" typeRef="com.nwissuesjan25.wmstudio.Countries" isList="true" allowNull="true"/>
+            <element name="regionId" typeRef="java.math.BigDecimal" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.Testtable">
+            <element name="myTimestampTimezone" typeRef="java.util.Date" allowNull="true"/>
+            <element name="timeStampLtz" typeRef="java.util.Date" allowNull="true"/>
+            <element name="myDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="pkcolumn" typeRef="java.math.BigDecimal" allowNull="true"/>
+            <element name="nrmlTimestmp" typeRef="java.util.Date" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.Table9">
+            <element name="id" typeRef="java.math.BigDecimal" allowNull="true"/>
+            <element name="column2" typeRef="java.math.BigDecimal" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="com.nwissuesjan25.wmstudio.JobHistory">
+            <element name="employeeId" typeRef="java.lang.Integer" allowNull="true"/>
+            <element name="startDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="jobs" typeRef="com.nwissuesjan25.wmstudio.Jobs" allowNull="true"/>
+            <element name="departments" typeRef="com.nwissuesjan25.wmstudio.Departments" allowNull="true"/>
+            <element name="endDate" typeRef="java.util.Date" allowNull="true"/>
+            <element name="employees" typeRef="com.nwissuesjan25.wmstudio.Employees" allowNull="true"/>
+        </dataobject>
+        <dataobject javaType="WMSTUDIOgetempsrtnType">
+            <element name="MANAGER_ID" typeRef="java.math.BigDecimal"/>
+            <element name="SALARY" typeRef="java.math.BigDecimal"/>
+            <element name="DEPARTMENT_ID" typeRef="java.math.BigDecimal"/>
+            <element name="FIRST_NAME" typeRef="java.lang.String"/>
+            <element name="HIRE_DATE" typeRef="java.sql.Timestamp"/>
+            <element name="COMMISSION_PCT" typeRef="java.lang.String"/>
+            <element name="EMAIL" typeRef="java.lang.String"/>
+            <element name="EMPLOYEE_ID" typeRef="java.math.BigDecimal"/>
+            <element name="LAST_NAME" typeRef="java.lang.String"/>
+            <element name="PHONE_NUMBER" typeRef="java.lang.String"/>
+            <element name="JOB_ID" typeRef="java.lang.String"/>
+        </dataobject>
+    </dataobjects>
+</service>

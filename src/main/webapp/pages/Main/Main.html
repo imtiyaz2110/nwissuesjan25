@@ -1,11 +1,107 @@
-<wm-page data-ng-controller="MainPageController" name="mainpage" pagetitle="Main">
-    <wm-header content="header" name="header" height="auto"></wm-header>
-    <wm-top-nav name="topnav" content="topnav"></wm-top-nav>
-    <wm-content name="content">
-        <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
-        <wm-page-content columnwidth="8" paddingleft="15" paddingright="15" name="mainContent">
+<wm-page data-ng-controller="MainPageController" pagetitle="Main" name="page1">
+    <wm-header content="header" name="header1"></wm-header>
+    <wm-top-nav content="topnav" name="top_nav1"></wm-top-nav>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-composite name="composite1">
+                <wm-label class="col-md-3" name="label1"></wm-label>
+                <wm-container class="col-md-9" name="container1">
+                    <wm-text name="textempid" type="number"></wm-text>
+                </wm-container>
+            </wm-composite>
+            <wm-livegrid name="EmployeesLivegrid1" service="WMSTUDIO@Employees" formlayout="dialog">
+                <wm-grid deleterow="true" updaterow="true" insertrow="true" gridfirstrowselect="true" readonlygrid="false" name="EmployeesGrid1" title="Employees" dataset="bind:Variables.WMSTUDIOEmployeesData.dataSet" height="500px">
+                    <wm-grid-column binding="employeeId" caption="Employee Id" type="integer" backgroundcolor="" textcolor="" primary-key="true" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false" is-related-pk="false"
+                    pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="firstName" caption="First Name" type="string" backgroundcolor="" textcolor="" primary-key="false" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                    is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="lastName" caption="Last Name" type="string" backgroundcolor="" textcolor="" primary-key="false" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                    is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="email" caption="Email" type="string" backgroundcolor="" textcolor="" primary-key="false" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                    is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="phoneNumber" caption="Phone Number" type="string" backgroundcolor="" textcolor="" primary-key="false" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                    is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="hireDate" caption="Hire Date" type="datetime" backgroundcolor="" textcolor="" primary-key="false" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" datepattern="dd-MMM-yyyy HH:mm:ss"
+                    formatpattern="toDate" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="salary" caption="Salary" type="big_decimal" backgroundcolor="" textcolor="" primary-key="false" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search" disable-inline-editing="false"
+                    is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="commissionPct" caption="Commission Pct" type="big_decimal" backgroundcolor="" textcolor="" primary-key="false" generator="assigned" col-class="" col-ng-class="" search-placeholder="Search"
+                    disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="departmentsByDepartmentId.departmentId" caption="Departments By Department Id Department Id" type="short" backgroundcolor="" textcolor="" primary-key="true" generator="assigned" col-class=""
+                    col-ng-class="" search-placeholder="Search" disable-inline-editing="false" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="departmentsByDepartmentId.departmentName" caption="Departments By Department Id Department Name" type="string" backgroundcolor="" textcolor="" primary-key="false" generator="assigned" col-class=""
+                    col-ng-class="" search-placeholder="Search" disable-inline-editing="true" is-related-pk="false" pcdisplay="true" mobiledisplay="true" readonly="false"></wm-grid-column>
+                    <wm-grid-column binding="employeesByManagerId.employeeId" caption="Employees By Manager Id Employee Id" type="integer" generator="assigned" is-related-pk="true" pcdisplay="true" mobiledisplay="true" readonly="undefined"></wm-grid-column>
+                    <wm-grid-column binding="employeesByManagerId.firstName" caption="Employees By Manager Id First Name" type="string" generator="assigned" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true" readonly="undefined"></wm-grid-column>
+                    <wm-grid-column binding="employeesByManagerId.lastName" caption="Employees By Manager Id Last Name" type="string" generator="assigned" disable-inline-editing="true" pcdisplay="true" mobiledisplay="true" readonly="undefined"></wm-grid-column>
+                    <wm-grid-action key="addNewRow" display-name="New" iconclass="glyphicon glyphicon-plus" show="true" class="btn-primary" action="addNewRow()"></wm-grid-action>
+                </wm-grid>
+                <wm-liveform novalidate="false" title="Details" name="EmployeesLiveform1" dataset="bind:Variables.WMSTUDIOEmployeesData.dataSet" formlayout="dialog">
+                    <wm-layoutgrid name="layoutgrid1">
+                        <wm-gridrow name="gridrow1">
+                            <wm-gridcolumn show="show" name="gridcolumn1" columnwidth="12">
+                                <wm-form-field name="departmentsByDepartmentId" displayname="Departments By Department Id" show="true" primary-key="false" generator="assigned" key="departmentsByDepartmentId" type="list" is-related="true" pc-display="true"
+                                mobile-display="true" widget="select"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow2">
+                            <wm-gridcolumn show="show" name="gridcolumn2" columnwidth="12">
+                                <wm-form-field name="employeesByManagerId" displayname="Employees By Manager Id" show="true" primary-key="false" generator="assigned" key="employeesByManagerId" type="list" is-related="true" pc-display="true" mobile-display="true"
+                                widget="select"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow3">
+                            <wm-gridcolumn show="show" name="gridcolumn3" columnwidth="12">
+                                <wm-form-field name="jobs" displayname="Jobs" show="true" primary-key="false" generator="assigned" key="jobs" type="list" is-related="true" required="required" pc-display="true" mobile-display="true" widget="select" maxchars="10"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow4">
+                            <wm-gridcolumn show="show" name="gridcolumn4" columnwidth="12">
+                                <wm-form-field name="employeeId" displayname="Employee Id" show="true" primary-key="true" generator="assigned" key="employeeId" type="integer" is-related="false" required="required" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow5">
+                            <wm-gridcolumn show="show" name="gridcolumn5" columnwidth="12">
+                                <wm-form-field name="firstName" displayname="First Name" show="true" primary-key="false" generator="assigned" key="firstName" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="20"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow6">
+                            <wm-gridcolumn show="show" name="gridcolumn6" columnwidth="12">
+                                <wm-form-field name="lastName" displayname="Last Name" show="true" primary-key="false" generator="assigned" key="lastName" type="string" is-related="false" required="required" pc-display="true" mobile-display="true" widget="text"
+                                maxchars="25"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow7">
+                            <wm-gridcolumn show="show" name="gridcolumn7" columnwidth="12">
+                                <wm-form-field name="email" displayname="Email" show="true" primary-key="false" generator="assigned" key="email" type="string" is-related="false" required="required" pc-display="true" mobile-display="true" widget="text" maxchars="25"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow8">
+                            <wm-gridcolumn show="show" name="gridcolumn8" columnwidth="12">
+                                <wm-form-field name="phoneNumber" displayname="Phone Number" show="true" primary-key="false" generator="assigned" key="phoneNumber" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" maxchars="20"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow9">
+                            <wm-gridcolumn show="show" name="gridcolumn9" columnwidth="12">
+                                <wm-form-field name="hireDate" displayname="Hire Date" show="true" primary-key="false" generator="assigned" key="hireDate" type="datetime" is-related="false" required="required" pc-display="true" mobile-display="true" widget="datetime"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow10">
+                            <wm-gridcolumn show="show" name="gridcolumn10" columnwidth="12">
+                                <wm-form-field name="salary" displayname="Salary" show="true" primary-key="false" generator="assigned" key="salary" type="big_decimal" is-related="false" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow11">
+                            <wm-gridcolumn show="show" name="gridcolumn11" columnwidth="12">
+                                <wm-form-field name="commissionPct" displayname="Commission Pct" show="true" primary-key="false" generator="assigned" key="commissionPct" type="big_decimal" is-related="false" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                    </wm-layoutgrid>
+                    <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="glyphicon glyphicon-remove-circle" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                    <wm-form-action key="save" class="form-save btn-success" iconclass="glyphicon glyphicon-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                </wm-liveform>
+            </wm-livegrid>
         </wm-page-content>
-        <wm-right-panel columnwidth="2" name="rightpanel" content="rightnav"></wm-right-panel>
     </wm-content>
-    <wm-footer name="footer" content="footer"></wm-footer>
+    <wm-footer content="footer" name="footer1"></wm-footer>
 </wm-page>

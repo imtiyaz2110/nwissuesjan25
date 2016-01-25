@@ -1,0 +1,22 @@
+{
+  "name" : "WMSTUDIO",
+  "description" : "Queries for WMSTUDIO",
+  "queries" : [ {
+    "name" : "getemps",
+    "query" : "select * from EMPLOYEES where EMPLOYEE_ID = :empid2",
+    "comment" : "",
+    "description" : null,
+    "nativeSql" : true,
+    "returnsSingleResult" : false,
+    "update" : false,
+    "queryParams" : [ {
+      "paramName" : "empid2",
+      "paramType" : "java.lang.Integer",
+      "testValue" : "130",
+      "systemParamName" : null,
+      "systemParam" : false,
+      "list" : false
+    } ],
+    "outputType" : null
+  } ]
+}

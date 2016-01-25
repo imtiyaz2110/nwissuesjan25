@@ -1,0 +1,5130 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "Swagger API documentation for WMSTUDIO",
+    "version" : "2.0",
+    "title" : "WMSTUDIOService Swagger Documentation",
+    "x-WM-SERVICE_TYPE" : "DataService",
+    "x-WM-SERVICE_ID" : "WMSTUDIO"
+  },
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RegionsController",
+    "description" : "Exposes APIs to work with Regions resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.RegionsController",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "TesttableController",
+    "description" : "Exposes APIs to work with Testtable resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.TesttableController",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "EmployeesController",
+    "description" : "Exposes APIs to work with Employees resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.EmployeesController",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "DepartmentsController",
+    "description" : "Exposes APIs to work with Departments resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.DepartmentsController",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "EmpDetailsViewController",
+    "description" : "Exposes APIs to work with EmpDetailsView resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.EmpDetailsViewController",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "ProcedureExecutionController",
+    "description" : "Controller class for procedure execution",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.ProcedureExecutionController",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "Table10Controller",
+    "description" : "Exposes APIs to work with Table10 resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.Table10Controller",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "QueryExecutionController",
+    "description" : "Controller class for query execution",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.QueryExecutionController",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "Table9Controller",
+    "description" : "Exposes APIs to work with Table9 resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.Table9Controller",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "JobHistoryController",
+    "description" : "Exposes APIs to work with JobHistory resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.JobHistoryController",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "JobsController",
+    "description" : "Exposes APIs to work with Jobs resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.JobsController",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "LocationsController",
+    "description" : "Exposes APIs to work with Locations resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.LocationsController",
+    "x-WM-VERSION" : ""
+  }, {
+    "name" : "CountriesController",
+    "description" : "Exposes APIs to work with Countries resource.",
+    "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.controller.CountriesController",
+    "x-WM-VERSION" : ""
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/WMSTUDIO/Countries/" : {
+      "get" : {
+        "tags" : [ "CountriesController" ],
+        "description" : "Returns the list of Countries instances.",
+        "operationId" : "getCountriess",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Countries",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "63dd094e-3601-4d16-aba6-4d6bffa37fd9",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getCountriess-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "CountriesController" ],
+        "description" : "Creates a new Countries instance.",
+        "operationId" : "createCountries",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Countries",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Countries",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Countries",
+          "x-WM-UUID" : "99a57409-203e-46a2-bac6-b6fb99803e2a",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Countries",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "971efeab-ddde-40d6-a6ed-d5118b9cebc4",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createCountries-1--292290261"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Countries/"
+    },
+    "/WMSTUDIO/Countries/count" : {
+      "get" : {
+        "tags" : [ "CountriesController" ],
+        "description" : "Returns the total count of Countries instances.",
+        "operationId" : "countAllCountriess",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "c012dd20-123c-4d15-ac25-75bee5fd8dc8",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllCountriess-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Countries/count"
+    },
+    "/WMSTUDIO/Countries/search" : {
+      "post" : {
+        "tags" : [ "CountriesController" ],
+        "description" : "Returns the list of Countries instances matching the search criteria.",
+        "operationId" : "findCountriess",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "7299ea3a-d299-49bd-bdeb-51199313d36b",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Countries",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "1459bd05-ef2e-4f78-99d8-b6da695f31bf",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findCountriess-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Countries/search"
+    },
+    "/WMSTUDIO/Countries/{id:.+}" : {
+      "get" : {
+        "tags" : [ "CountriesController" ],
+        "description" : "Returns the Countries instance associated with the given id.",
+        "operationId" : "getCountries",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "0bf243a8-5b8d-489f-a8b4-2cd907282a62",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Countries",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "a92519c6-b3d4-4fc7-883f-4ef8cbafa9c6",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getCountries-1-1195260122"
+      },
+      "put" : {
+        "tags" : [ "CountriesController" ],
+        "description" : "Updates the Countries instance associated with the given id.",
+        "operationId" : "editCountries",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "03577d6e-513c-4c73-a6c9-d2c81309c1b9",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "Countries",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Countries",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Countries",
+          "x-WM-UUID" : "763875b7-103e-44f4-85f7-3b9ad02a8ea3",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Countries",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "2732203b-bcfd-4d0d-9780-cef29c20d864",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editCountries-2-982660664"
+      },
+      "delete" : {
+        "tags" : [ "CountriesController" ],
+        "description" : "Deletes the Countries instance associated with the given id.",
+        "operationId" : "deleteCountries",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "357b5991-6be4-49d2-9b57-530f1b8cc3b5",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "eb95635b-1b08-4145-b4cc-4c689e8a289b",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteCountries-1-1195260122"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Countries/{id:.+}"
+    },
+    "/WMSTUDIO/Countries/{id:.+}/locationses" : {
+      "get" : {
+        "tags" : [ "CountriesController" ],
+        "description" : "Gets the locationses instance associated with the given id.",
+        "operationId" : "findAssociatedlocationses",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "0878e52c-636f-4b5b-8023-e5e2728b83bb",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Locations",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "c6a30b4b-ba9d-4ff1-9b8b-cbd8b5364811",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findAssociatedlocationses-2-1394593052"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Countries",
+      "x-WM-TAG" : "CountriesController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}/locationses",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Countries/{id:.+}/locationses"
+    },
+    "/WMSTUDIO/Departments/" : {
+      "get" : {
+        "tags" : [ "DepartmentsController" ],
+        "description" : "Returns the list of Departments instances.",
+        "operationId" : "getDepartmentss",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Departments",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "024ce06a-5a40-4e20-bb51-e5f8639baa20",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getDepartmentss-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "DepartmentsController" ],
+        "description" : "Creates a new Departments instance.",
+        "operationId" : "createDepartments",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Departments",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Departments",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Departments",
+          "x-WM-UUID" : "70a1f278-bdc2-470c-9dcd-75500816a70e",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Departments",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "5566e929-690c-4a84-80ce-87b952c27849",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createDepartments-1-296064344"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Departments",
+      "x-WM-TAG" : "DepartmentsController",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Departments/"
+    },
+    "/WMSTUDIO/Departments/count" : {
+      "get" : {
+        "tags" : [ "DepartmentsController" ],
+        "description" : "Returns the total count of Departments instances.",
+        "operationId" : "countAllDepartmentss",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "99e9b78e-5ff5-4280-a6ee-6271308d9b89",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllDepartmentss-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Departments",
+      "x-WM-TAG" : "DepartmentsController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Departments/count"
+    },
+    "/WMSTUDIO/Departments/search" : {
+      "post" : {
+        "tags" : [ "DepartmentsController" ],
+        "description" : "Returns the list of Departments instances matching the search criteria.",
+        "operationId" : "findDepartmentss",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "a86eef4d-f8f3-46ea-957b-9ff11a6ffd2f",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Departments",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "1cfc2ea9-71b1-49ab-966c-e4caf6888a4c",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findDepartmentss-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Departments",
+      "x-WM-TAG" : "DepartmentsController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Departments/search"
+    },
+    "/WMSTUDIO/Departments/{id:.+}" : {
+      "get" : {
+        "tags" : [ "DepartmentsController" ],
+        "description" : "Returns the Departments instance associated with the given id.",
+        "operationId" : "getDepartments",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "short",
+          "x-WM-UUID" : "a71ad1f2-4d52-4a71-89ab-5567f85e8a6f",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Departments",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "95dbbfa4-7431-4c0d-b707-1946d496f596",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getDepartments-1-109414129"
+      },
+      "put" : {
+        "tags" : [ "DepartmentsController" ],
+        "description" : "Updates the Departments instance associated with the given id.",
+        "operationId" : "editDepartments",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "short",
+          "x-WM-UUID" : "7188f13b-df28-4310-a151-875adc76cf2d",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "Departments",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Departments",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Departments",
+          "x-WM-UUID" : "8ac9193b-9df6-412d-adf0-96f5d499e948",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Departments",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "d28b6421-3f15-4aa9-bc38-d1a358b33a74",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editDepartments-2-49419192"
+      },
+      "delete" : {
+        "tags" : [ "DepartmentsController" ],
+        "description" : "Deletes the Departments instance associated with the given id.",
+        "operationId" : "deleteDepartments",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "short",
+          "x-WM-UUID" : "1f04f407-d3c7-4752-a214-5ba248e73a32",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "d775c3b4-7c8b-4a20-8877-b122922d5ac1",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteDepartments-1-109414129"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Departments",
+      "x-WM-TAG" : "DepartmentsController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Departments/{id:.+}"
+    },
+    "/WMSTUDIO/Departments/{id:.+}/employeesesForDepartmentId" : {
+      "get" : {
+        "tags" : [ "DepartmentsController" ],
+        "description" : "Gets the employeesesForDepartmentId instance associated with the given id.",
+        "operationId" : "findAssociatedemployeesesForDepartmentId",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "short",
+          "x-WM-UUID" : "df62c962-afc4-492f-9992-4a02c070f3ca",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Employees",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "01a4e245-b696-4475-b05d-c41ee3d63a9c",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findAssociatedemployeesesForDepartmentId-2-308747059"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Departments",
+      "x-WM-TAG" : "DepartmentsController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}/employeesesForDepartmentId",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Departments/{id:.+}/employeesesForDepartmentId"
+    },
+    "/WMSTUDIO/Departments/{id:.+}/jobHistories" : {
+      "get" : {
+        "tags" : [ "DepartmentsController" ],
+        "description" : "Gets the jobHistories instance associated with the given id.",
+        "operationId" : "findAssociatedjobHistories",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "short",
+          "x-WM-UUID" : "89e9456a-9c5c-4511-81f3-3d6c137c9582",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/JobHistory",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "07ae61e2-169e-43e8-8b05-eeacc5ae1ea4",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findAssociatedjobHistories-2-308747059"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Departments",
+      "x-WM-TAG" : "DepartmentsController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}/jobHistories",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Departments/{id:.+}/jobHistories"
+    },
+    "/WMSTUDIO/EmpDetailsView/" : {
+      "get" : {
+        "tags" : [ "EmpDetailsViewController" ],
+        "description" : "Returns the list of EmpDetailsView instances.",
+        "operationId" : "getEmpDetailsViews",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/EmpDetailsView",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "284afd78-8df7-41ed-a390-1fcbc1c40385",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getEmpDetailsViews-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "EmpDetailsViewController" ],
+        "description" : "Creates a new EmpDetailsView instance.",
+        "operationId" : "createEmpDetailsView",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "EmpDetailsView",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/EmpDetailsView",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.EmpDetailsView",
+          "x-WM-UUID" : "33f3769f-f369-498b-af1d-01efaf5393b7",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/EmpDetailsView",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "e1d28e6c-3d4a-4822-a94a-bf4193e595c8",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createEmpDetailsView-1--1797598766"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/EmpDetailsView",
+      "x-WM-TAG" : "EmpDetailsViewController",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/EmpDetailsView/"
+    },
+    "/WMSTUDIO/EmpDetailsView/composite-id" : {
+      "get" : {
+        "tags" : [ "EmpDetailsViewController" ],
+        "description" : "Returns the EmpDetailsView instance associated with the given composite-id.",
+        "operationId" : "getEmpDetailsView",
+        "parameters" : [ {
+          "name" : "employeeId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "820d20f5-750f-4d12-a02d-e68a245e2d51",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "jobId",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "e4933313-477c-4c57-8d63-9d7030a80993",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "managerId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "6db9d4e0-c8d7-4564-b279-0aa19e1c5684",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "departmentId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Short",
+          "x-WM-UUID" : "38a3a952-60e1-4587-a211-148bc449d19a",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "locationId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Short",
+          "x-WM-UUID" : "69e4b34e-6b8c-43b6-a035-460ee70b0f73",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "countryId",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "ca46e600-c79e-4b66-bfb7-58394532714f",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "firstName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "3874ec3b-e9b6-48e0-84b4-7c234df8b072",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "lastName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "d696f44e-d10e-4a59-9fd0-60ce6f4dd267",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "salary",
+          "in" : "query",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "2d00fae1-f2de-46b1-b851-d2a20fc6336a",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "commissionPct",
+          "in" : "query",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "d3d33045-a32a-4a61-9a7e-49ecfad5c045",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "departmentName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "046b22f5-f6e0-4ee5-b369-e3e188e077a4",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "jobTitle",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "6f078a45-928d-49a5-ae74-20ee256418d1",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "city",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "401605ff-abd6-4a28-a188-2cf28bc1191d",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "stateProvince",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "9e8e2d29-acfe-4542-9c16-89e0efe00663",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "countryName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "6abf8f3d-d9c3-48c2-811f-7a204b60c4c4",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "regionName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "93ca5856-f597-4f3a-93c9-bd08dc30f676",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/EmpDetailsView",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "01c1eaa4-fe74-4dce-9e07-10ff7a31912d",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getEmpDetailsView-16-1186900697"
+      },
+      "put" : {
+        "tags" : [ "EmpDetailsViewController" ],
+        "description" : "Updates the EmpDetailsView instance associated with the given composite-id.",
+        "operationId" : "editEmpDetailsView",
+        "parameters" : [ {
+          "name" : "employeeId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "8205a32e-1ad3-4db9-8612-0b150a5e5b95",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "jobId",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "5dedc626-bc04-47d7-9bda-446ea3ec76ca",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "managerId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "7f0533d8-a6ff-478a-a8f4-d14228129200",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "departmentId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Short",
+          "x-WM-UUID" : "01983a48-0896-4430-a26c-f64bab01714c",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "locationId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Short",
+          "x-WM-UUID" : "8faf9d83-097e-4d10-96ba-0340516f30d2",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "countryId",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "5374e384-dfe4-4e91-9d0a-19419ef6f4c7",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "firstName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "465a4fcc-78f9-45f6-b32d-a44ebf24e715",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "lastName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "7764fc77-c48a-41ba-a2be-81ecb00a1466",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "salary",
+          "in" : "query",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "d1a7b27c-e82a-421b-a126-66ace3d06c2d",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "commissionPct",
+          "in" : "query",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "77551948-c9eb-45dd-a7ed-65422f61f428",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "departmentName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "88effce0-53e3-4cf8-ac91-390c121deff8",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "jobTitle",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "a52258e6-c42f-4385-b4a5-e914fde59b33",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "city",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "e0dd228e-3501-458d-8fe9-63df3f9058b9",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "stateProvince",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "fff2e34f-1752-4df3-8a33-3731da9e8bbf",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "countryName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "8ab155b3-d9a1-4b40-ba1f-9e52b9dc1916",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "regionName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "cdb9e35f-bb34-4056-b920-9d5a842c65dd",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "EmpDetailsView",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/EmpDetailsView",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.EmpDetailsView",
+          "x-WM-UUID" : "2f5256f0-e554-4d97-b7da-0e7668132a77",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/EmpDetailsView",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "ba4075b5-5e81-49f2-bf4d-d92a78e22b64",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editEmpDetailsView-17--831946566"
+      },
+      "delete" : {
+        "tags" : [ "EmpDetailsViewController" ],
+        "description" : "Deletes the EmpDetailsView instance associated with the given composite-id.",
+        "operationId" : "deleteEmpDetailsView",
+        "parameters" : [ {
+          "name" : "employeeId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "ba85934d-7812-4f4d-a164-077b5ed97373",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "jobId",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "6a5bebec-5300-440e-a9d5-4f1ac5eb7a33",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "managerId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "a86f5dd9-2ec5-4049-9803-61bb744593ff",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "departmentId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Short",
+          "x-WM-UUID" : "7c8e2c09-5aab-4d1a-9cde-401d0e0ef4d5",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "locationId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Short",
+          "x-WM-UUID" : "45932245-441a-4f38-9a14-381d4c3a27b0",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "countryId",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "a8724ef5-d123-4d78-b050-1ed0c6ef7f3c",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "firstName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "c0fd270f-9a52-4565-9778-86f1828a1372",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "lastName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "052e7b99-d318-472f-99a1-70ade55ac9ad",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "salary",
+          "in" : "query",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "4258c4a9-d8c6-491a-b08c-968d0b765e73",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "commissionPct",
+          "in" : "query",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "d6d3b472-a0e5-4891-bebe-dacf6d50ab03",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "departmentName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "32b18e0f-25a1-4a63-982c-523d56d022fe",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "jobTitle",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "d100f272-7dfe-4832-8c31-1a912df83d01",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "city",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "d20961bd-8cf2-4a1b-b240-76b4c4e61114",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "stateProvince",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "b62001ae-caf6-44c6-bd6b-82c31a72eabf",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "countryName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "1aa9ee2c-2e72-44f1-80b9-9fe052be891e",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "regionName",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "cd7b80b8-a6ae-48bc-ab0c-73bcb4c21c83",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "2514b0f7-9106-4602-b5bf-a46ca0a10791",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteEmpDetailsView-16-1186900697"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/EmpDetailsView",
+      "x-WM-TAG" : "EmpDetailsViewController",
+      "x-WM-RELATIVE_PATH" : "/composite-id",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/EmpDetailsView/composite-id"
+    },
+    "/WMSTUDIO/EmpDetailsView/count" : {
+      "get" : {
+        "tags" : [ "EmpDetailsViewController" ],
+        "description" : "Returns the total count of EmpDetailsView instances.",
+        "operationId" : "countAllEmpDetailsViews",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "d6e24e53-5c47-45b1-a7e9-5f75c47e4e9d",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllEmpDetailsViews-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/EmpDetailsView",
+      "x-WM-TAG" : "EmpDetailsViewController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/EmpDetailsView/count"
+    },
+    "/WMSTUDIO/EmpDetailsView/search" : {
+      "post" : {
+        "tags" : [ "EmpDetailsViewController" ],
+        "description" : "Returns the list of EmpDetailsView instances matching the search criteria.",
+        "operationId" : "findEmpDetailsViews",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "126eb0de-8d23-4038-b2ea-78e5ef8d0af6",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/EmpDetailsView",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "fba520be-a107-4362-853b-8f82c83ef376",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findEmpDetailsViews-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/EmpDetailsView",
+      "x-WM-TAG" : "EmpDetailsViewController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/EmpDetailsView/search"
+    },
+    "/WMSTUDIO/Employees/" : {
+      "get" : {
+        "tags" : [ "EmployeesController" ],
+        "description" : "Returns the list of Employees instances.",
+        "operationId" : "getEmployeess",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Employees",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "9b4d48e3-e880-429c-a643-1b00a4ece7fd",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getEmployeess-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "EmployeesController" ],
+        "description" : "Creates a new Employees instance.",
+        "operationId" : "createEmployees",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Employees",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Employees",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Employees",
+          "x-WM-UUID" : "70ab34e0-3db3-445f-a025-c5e0411a06ac",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Employees",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "5d1fa5e4-c8ba-49f6-a799-915a0e00ead1",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createEmployees-1-992892412"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Employees",
+      "x-WM-TAG" : "EmployeesController",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Employees/"
+    },
+    "/WMSTUDIO/Employees/count" : {
+      "get" : {
+        "tags" : [ "EmployeesController" ],
+        "description" : "Returns the total count of Employees instances.",
+        "operationId" : "countAllEmployeess",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "ca1eaad2-3411-495f-b057-6e794bd49a8b",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllEmployeess-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Employees",
+      "x-WM-TAG" : "EmployeesController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Employees/count"
+    },
+    "/WMSTUDIO/Employees/search" : {
+      "post" : {
+        "tags" : [ "EmployeesController" ],
+        "description" : "Returns the list of Employees instances matching the search criteria.",
+        "operationId" : "findEmployeess",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "601ef836-c795-4c3d-a5d8-68af12d6f552",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Employees",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "4644b03d-28c2-4e54-b947-9f3d28a2555f",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findEmployeess-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Employees",
+      "x-WM-TAG" : "EmployeesController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Employees/search"
+    },
+    "/WMSTUDIO/Employees/{id:.+}" : {
+      "get" : {
+        "tags" : [ "EmployeesController" ],
+        "description" : "Returns the Employees instance associated with the given id.",
+        "operationId" : "getEmployees",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "fe0ffe9d-9d63-4437-aec5-9a7c1c42944f",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Employees",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "f19553e4-ab04-4406-b818-64c96239ebd9",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getEmployees-1--2056816673"
+      },
+      "put" : {
+        "tags" : [ "EmployeesController" ],
+        "description" : "Updates the Employees instance associated with the given id.",
+        "operationId" : "editEmployees",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "30eef581-43f9-4b9a-9a3b-c2e713c3f9d4",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "Employees",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Employees",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Employees",
+          "x-WM-UUID" : "c4f040c3-7d1b-4cf3-8a07-708439134257",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Employees",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "d56d8494-92a8-4f9e-be16-17b11ecc886d",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editEmployees-2--2094881086"
+      },
+      "delete" : {
+        "tags" : [ "EmployeesController" ],
+        "description" : "Deletes the Employees instance associated with the given id.",
+        "operationId" : "deleteEmployees",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "cafd8317-ce2e-4321-b5b2-d2992c61757f",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "7d947a3e-ba3b-4ea4-98ab-562173b32462",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteEmployees-1--2056816673"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Employees",
+      "x-WM-TAG" : "EmployeesController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Employees/{id:.+}"
+    },
+    "/WMSTUDIO/Employees/{id:.+}/departmentsesForManagerId" : {
+      "get" : {
+        "tags" : [ "EmployeesController" ],
+        "description" : "Gets the departmentsesForManagerId instance associated with the given id.",
+        "operationId" : "findAssociateddepartmentsesForManagerId",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "f2cc8c3d-9afd-47b3-844d-a6d019da1b29",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Departments",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "b59271c8-d57a-43a6-86a4-2a2dbf94aa4f",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findAssociateddepartmentsesForManagerId-2--1857483743"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Employees",
+      "x-WM-TAG" : "EmployeesController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}/departmentsesForManagerId",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Employees/{id:.+}/departmentsesForManagerId"
+    },
+    "/WMSTUDIO/Employees/{id:.+}/employeesesForManagerId" : {
+      "get" : {
+        "tags" : [ "EmployeesController" ],
+        "description" : "Gets the employeesesForManagerId instance associated with the given id.",
+        "operationId" : "findAssociatedemployeesesForManagerId",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "1fbcbb5c-e83b-436a-82bc-768af8f85dc4",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Employees",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "9a146553-6c8e-4845-b90f-491f4453f551",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findAssociatedemployeesesForManagerId-2--1857483743"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Employees",
+      "x-WM-TAG" : "EmployeesController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}/employeesesForManagerId",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Employees/{id:.+}/employeesesForManagerId"
+    },
+    "/WMSTUDIO/Employees/{id:.+}/jobHistories" : {
+      "get" : {
+        "tags" : [ "EmployeesController" ],
+        "description" : "Gets the jobHistories instance associated with the given id.",
+        "operationId" : "findAssociatedjobHistories",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "b7624e2b-711e-4ffa-a216-13be04c397b7",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/JobHistory",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "4b10ddc6-8ac9-4305-a22a-7b634f223d55",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findAssociatedjobHistories-2--1857483743"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Employees",
+      "x-WM-TAG" : "EmployeesController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}/jobHistories",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Employees/{id:.+}/jobHistories"
+    },
+    "/WMSTUDIO/JobHistory/" : {
+      "get" : {
+        "tags" : [ "JobHistoryController" ],
+        "description" : "Returns the list of JobHistory instances.",
+        "operationId" : "getJobHistorys",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/JobHistory",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "a5cd2432-c308-4f25-94cb-7f1af134197b",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getJobHistorys-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "JobHistoryController" ],
+        "description" : "Creates a new JobHistory instance.",
+        "operationId" : "createJobHistory",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "JobHistory",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/JobHistory",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.JobHistory",
+          "x-WM-UUID" : "1ada4f07-9a4a-49d4-afdf-3a51ce96ba8c",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/JobHistory",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "e45719a9-e1a0-473b-b865-ecc6087d42fc",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createJobHistory-1--279396150"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/JobHistory",
+      "x-WM-TAG" : "JobHistoryController",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/JobHistory/"
+    },
+    "/WMSTUDIO/JobHistory/composite-id" : {
+      "get" : {
+        "tags" : [ "JobHistoryController" ],
+        "description" : "Returns the JobHistory instance associated with the given composite-id.",
+        "operationId" : "getJobHistory",
+        "parameters" : [ {
+          "name" : "employeeId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "e8a2c990-02b0-4d15-9dbd-64f07d062eb8",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "startDate",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "format" : "date",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.util.Date",
+          "x-WM-UUID" : "ba0db400-e04c-4edb-beef-2d347d7dbb7d",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/JobHistory",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "7baad100-c185-4788-9a8c-2e873a08df72",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getJobHistory-2-1272769705"
+      },
+      "put" : {
+        "tags" : [ "JobHistoryController" ],
+        "description" : "Updates the JobHistory instance associated with the given composite-id.",
+        "operationId" : "editJobHistory",
+        "parameters" : [ {
+          "name" : "employeeId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "deb019c3-509d-428e-9d38-54b5db33857b",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "startDate",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "format" : "date",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.util.Date",
+          "x-WM-UUID" : "9340f999-6915-468c-8a97-e1340663af77",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "JobHistory",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/JobHistory",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.JobHistory",
+          "x-WM-UUID" : "019c7ab4-c213-426e-a3c2-6254798816f3",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/JobHistory",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "c694da82-7281-4805-9f39-c4169bf2a5eb",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editJobHistory-3--431557950"
+      },
+      "delete" : {
+        "tags" : [ "JobHistoryController" ],
+        "description" : "Deletes the JobHistory instance associated with the given composite-id.",
+        "operationId" : "deleteJobHistory",
+        "parameters" : [ {
+          "name" : "employeeId",
+          "in" : "query",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "72591c1b-a079-488f-a08b-96f902a48daf",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "startDate",
+          "in" : "query",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "format" : "date",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.util.Date",
+          "x-WM-UUID" : "bdcb73f9-46ca-4480-abf6-7cbad0c24df6",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "31363e8d-fe31-4c02-814b-8cb336d23d5d",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteJobHistory-2-1272769705"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/JobHistory",
+      "x-WM-TAG" : "JobHistoryController",
+      "x-WM-RELATIVE_PATH" : "/composite-id",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/JobHistory/composite-id"
+    },
+    "/WMSTUDIO/JobHistory/count" : {
+      "get" : {
+        "tags" : [ "JobHistoryController" ],
+        "description" : "Returns the total count of JobHistory instances.",
+        "operationId" : "countAllJobHistorys",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "c94179e9-157d-405c-8082-7c1ed972ec13",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllJobHistorys-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/JobHistory",
+      "x-WM-TAG" : "JobHistoryController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/JobHistory/count"
+    },
+    "/WMSTUDIO/JobHistory/search" : {
+      "post" : {
+        "tags" : [ "JobHistoryController" ],
+        "description" : "Returns the list of JobHistory instances matching the search criteria.",
+        "operationId" : "findJobHistorys",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "68da2428-3f1d-461a-8d53-d7ade6afcc74",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/JobHistory",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "ab1b1697-d448-4bff-a08e-5a4b07b7d755",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findJobHistorys-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/JobHistory",
+      "x-WM-TAG" : "JobHistoryController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/JobHistory/search"
+    },
+    "/WMSTUDIO/Jobs/" : {
+      "get" : {
+        "tags" : [ "JobsController" ],
+        "description" : "Returns the list of Jobs instances.",
+        "operationId" : "getJobss",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Jobs",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "7e998f1f-8ac3-44ec-954f-e807810e2036",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getJobss-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "JobsController" ],
+        "description" : "Creates a new Jobs instance.",
+        "operationId" : "createJobs",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Jobs",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Jobs",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Jobs",
+          "x-WM-UUID" : "34c8116e-ee98-4aad-9a66-36308474d805",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Jobs",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "d6e0745d-553a-454e-9a69-9d14cb0cc271",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createJobs-1-187400585"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Jobs",
+      "x-WM-TAG" : "JobsController",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Jobs/"
+    },
+    "/WMSTUDIO/Jobs/count" : {
+      "get" : {
+        "tags" : [ "JobsController" ],
+        "description" : "Returns the total count of Jobs instances.",
+        "operationId" : "countAllJobss",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "b40b2697-a2d1-49a4-8eb5-b567f31aefc1",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllJobss-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Jobs",
+      "x-WM-TAG" : "JobsController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Jobs/count"
+    },
+    "/WMSTUDIO/Jobs/search" : {
+      "post" : {
+        "tags" : [ "JobsController" ],
+        "description" : "Returns the list of Jobs instances matching the search criteria.",
+        "operationId" : "findJobss",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "fe862820-5391-439b-8ca4-c10adfa2b8fc",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Jobs",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "91865ce9-3cb7-4773-bb47-a0566fb433f9",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findJobss-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Jobs",
+      "x-WM-TAG" : "JobsController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Jobs/search"
+    },
+    "/WMSTUDIO/Jobs/{id:.+}" : {
+      "get" : {
+        "tags" : [ "JobsController" ],
+        "description" : "Returns the Jobs instance associated with the given id.",
+        "operationId" : "getJobs",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "434ef8c4-d68a-4109-8da5-a68f0f15fa1b",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Jobs",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "49c110f1-0b5d-41be-b316-8c59c02e7cb5",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getJobs-1-1195260122"
+      },
+      "put" : {
+        "tags" : [ "JobsController" ],
+        "description" : "Updates the Jobs instance associated with the given id.",
+        "operationId" : "editJobs",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "71df0785-d2bf-445a-b3e6-be1b4cd675a7",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "Jobs",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Jobs",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Jobs",
+          "x-WM-UUID" : "208dd6d6-0570-49f9-ba63-2e5852d32a8a",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Jobs",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "1b46f085-035e-4eaa-9dc1-99a6a631d61d",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editJobs-2-1462351510"
+      },
+      "delete" : {
+        "tags" : [ "JobsController" ],
+        "description" : "Deletes the Jobs instance associated with the given id.",
+        "operationId" : "deleteJobs",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "940b0d19-649e-40ac-9166-ad61e7e3caaa",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "a38fb157-697c-4bfc-a2d8-dd0157ad982e",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteJobs-1-1195260122"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Jobs",
+      "x-WM-TAG" : "JobsController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Jobs/{id:.+}"
+    },
+    "/WMSTUDIO/Jobs/{id:.+}/employeeses" : {
+      "get" : {
+        "tags" : [ "JobsController" ],
+        "description" : "Gets the employeeses instance associated with the given id.",
+        "operationId" : "findAssociatedemployeeses",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "08e1533a-9601-4a1e-a480-8a89048945f1",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Employees",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "bb094b5c-9f20-402d-ac4a-63fed92d5d67",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findAssociatedemployeeses-2-1394593052"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Jobs",
+      "x-WM-TAG" : "JobsController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}/employeeses",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Jobs/{id:.+}/employeeses"
+    },
+    "/WMSTUDIO/Jobs/{id:.+}/jobHistories" : {
+      "get" : {
+        "tags" : [ "JobsController" ],
+        "description" : "Gets the jobHistories instance associated with the given id.",
+        "operationId" : "findAssociatedjobHistories",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "efae2802-b841-4d21-bbaf-18de6fcfdc32",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/JobHistory",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "3882249b-7107-420b-afbd-7f1df28f97d8",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findAssociatedjobHistories-2-1394593052"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Jobs",
+      "x-WM-TAG" : "JobsController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}/jobHistories",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Jobs/{id:.+}/jobHistories"
+    },
+    "/WMSTUDIO/Locations/" : {
+      "get" : {
+        "tags" : [ "LocationsController" ],
+        "description" : "Returns the list of Locations instances.",
+        "operationId" : "getLocationss",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Locations",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "a086a53a-70ba-48f3-adda-485a69debc50",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getLocationss-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "LocationsController" ],
+        "description" : "Creates a new Locations instance.",
+        "operationId" : "createLocations",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Locations",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Locations",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Locations",
+          "x-WM-UUID" : "12056ec0-8ede-4393-8eda-42ef456f793d",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Locations",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "eb371b8e-bccc-4ff1-b8e0-5b34a0d8b8c3",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createLocations-1-1452850645"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Locations",
+      "x-WM-TAG" : "LocationsController",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Locations/"
+    },
+    "/WMSTUDIO/Locations/count" : {
+      "get" : {
+        "tags" : [ "LocationsController" ],
+        "description" : "Returns the total count of Locations instances.",
+        "operationId" : "countAllLocationss",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "60ec7507-acce-4c54-b0e9-b714fbaddd3e",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllLocationss-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Locations",
+      "x-WM-TAG" : "LocationsController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Locations/count"
+    },
+    "/WMSTUDIO/Locations/search" : {
+      "post" : {
+        "tags" : [ "LocationsController" ],
+        "description" : "Returns the list of Locations instances matching the search criteria.",
+        "operationId" : "findLocationss",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "873c107f-0d74-489e-ab52-c9b88125164b",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Locations",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "eb3724fb-a580-4a5d-96e9-2974710d315e",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findLocationss-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Locations",
+      "x-WM-TAG" : "LocationsController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Locations/search"
+    },
+    "/WMSTUDIO/Locations/{id:.+}" : {
+      "get" : {
+        "tags" : [ "LocationsController" ],
+        "description" : "Returns the Locations instance associated with the given id.",
+        "operationId" : "getLocations",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "short",
+          "x-WM-UUID" : "a5844d4d-1ed7-40e6-8558-0b15f3664e7b",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Locations",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "814a646b-27a4-4549-a93b-0b4164362eef",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getLocations-1-109414129"
+      },
+      "put" : {
+        "tags" : [ "LocationsController" ],
+        "description" : "Updates the Locations instance associated with the given id.",
+        "operationId" : "editLocations",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "short",
+          "x-WM-UUID" : "ed9d4bf4-cae9-49a9-bca2-12d4a7a64240",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "Locations",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Locations",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Locations",
+          "x-WM-UUID" : "d050b85d-dd3d-4f76-a7a4-0f20102d0ae7",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Locations",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "1bff6358-1534-4560-98df-2fae33cd5278",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editLocations-2-1206205493"
+      },
+      "delete" : {
+        "tags" : [ "LocationsController" ],
+        "description" : "Deletes the Locations instance associated with the given id.",
+        "operationId" : "deleteLocations",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "short",
+          "x-WM-UUID" : "c0551701-214c-43b1-bb05-3200c429a81c",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "6b8ae74a-4425-4af2-8b8d-3995ac631790",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteLocations-1-109414129"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Locations",
+      "x-WM-TAG" : "LocationsController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Locations/{id:.+}"
+    },
+    "/WMSTUDIO/Locations/{id:.+}/departmentses" : {
+      "get" : {
+        "tags" : [ "LocationsController" ],
+        "description" : "Gets the departmentses instance associated with the given id.",
+        "operationId" : "findAssociateddepartmentses",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "short",
+          "x-WM-UUID" : "966e3a9d-7004-4fb1-9bcd-7beb3e8383da",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Departments",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "d62d2499-7b5f-4c2d-a526-8ef8c12bf831",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findAssociateddepartmentses-2-308747059"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Locations",
+      "x-WM-TAG" : "LocationsController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}/departmentses",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Locations/{id:.+}/departmentses"
+    },
+    "/WMSTUDIO/Regions/" : {
+      "get" : {
+        "tags" : [ "RegionsController" ],
+        "description" : "Returns the list of Regions instances.",
+        "operationId" : "getRegionss",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Regions",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "c06cb5bc-9544-459b-8afa-7553f60a52c7",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getRegionss-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "RegionsController" ],
+        "description" : "Creates a new Regions instance.",
+        "operationId" : "createRegions",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Regions",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Regions",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Regions",
+          "x-WM-UUID" : "ae7c3334-9365-4822-83c1-725e625b2749",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Regions",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "dd0813e3-4908-4226-a5a4-51c8ad1725f1",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createRegions-1-1897805558"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Regions",
+      "x-WM-TAG" : "RegionsController",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Regions/"
+    },
+    "/WMSTUDIO/Regions/count" : {
+      "get" : {
+        "tags" : [ "RegionsController" ],
+        "description" : "Returns the total count of Regions instances.",
+        "operationId" : "countAllRegionss",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "8d36cb51-17be-4de7-a569-2e1892385823",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllRegionss-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Regions",
+      "x-WM-TAG" : "RegionsController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Regions/count"
+    },
+    "/WMSTUDIO/Regions/search" : {
+      "post" : {
+        "tags" : [ "RegionsController" ],
+        "description" : "Returns the list of Regions instances matching the search criteria.",
+        "operationId" : "findRegionss",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "3dbaa806-f5bd-4a3c-804c-53bf17da929c",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Regions",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "b6d40221-6a44-4a29-a7ea-a235c84915fa",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findRegionss-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Regions",
+      "x-WM-TAG" : "RegionsController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Regions/search"
+    },
+    "/WMSTUDIO/Regions/{id:.+}" : {
+      "get" : {
+        "tags" : [ "RegionsController" ],
+        "description" : "Returns the Regions instance associated with the given id.",
+        "operationId" : "getRegions",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "4afabcfe-0c43-4e0c-8a6a-713f50675085",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Regions",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "52928105-e35b-4f61-8639-8e3c2c64ec0a",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getRegions-1--1405463648"
+      },
+      "put" : {
+        "tags" : [ "RegionsController" ],
+        "description" : "Updates the Regions instance associated with the given id.",
+        "operationId" : "editRegions",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "66a81ed0-e120-46f7-9bb1-a01a1693d766",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "Regions",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Regions",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Regions",
+          "x-WM-UUID" : "ae8f6fe5-849e-4dda-bd62-d162ca94d991",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Regions",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "5ef19ef1-c3bd-4bab-9d7e-4961a2f92d76",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editRegions-2-1435257505"
+      },
+      "delete" : {
+        "tags" : [ "RegionsController" ],
+        "description" : "Deletes the Regions instance associated with the given id.",
+        "operationId" : "deleteRegions",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "4f793189-e749-440a-ae06-797823891119",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "d4c83aaf-20f2-483f-a83e-f9a269a88d08",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteRegions-1--1405463648"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Regions",
+      "x-WM-TAG" : "RegionsController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Regions/{id:.+}"
+    },
+    "/WMSTUDIO/Regions/{id:.+}/countrieses" : {
+      "get" : {
+        "tags" : [ "RegionsController" ],
+        "description" : "Gets the countrieses instance associated with the given id.",
+        "operationId" : "findAssociatedcountrieses",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "cfc7ed28-2a05-4ae3-ba12-b60d343ee654",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Countries",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "1cab33fa-3ed0-4c31-80d3-78c5babf55b4",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findAssociatedcountrieses-2--1206130718"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Regions",
+      "x-WM-TAG" : "RegionsController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}/countrieses",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Regions/{id:.+}/countrieses"
+    },
+    "/WMSTUDIO/Table10/" : {
+      "get" : {
+        "tags" : [ "Table10Controller" ],
+        "description" : "Returns the list of Table10 instances.",
+        "operationId" : "getTable10s",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Table10",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "7373ce2f-caad-40d8-a360-519498b2ee49",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getTable10s-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "Table10Controller" ],
+        "description" : "Creates a new Table10 instance.",
+        "operationId" : "createTable10",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Table10",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Table10",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Table10",
+          "x-WM-UUID" : "b49083ea-a116-4b37-a5e6-8425d5fc520c",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Table10",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "691df3bc-140b-4b40-b33a-6f75d9c43c82",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createTable10-1--741210780"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Table10",
+      "x-WM-TAG" : "Table10Controller",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Table10/"
+    },
+    "/WMSTUDIO/Table10/count" : {
+      "get" : {
+        "tags" : [ "Table10Controller" ],
+        "description" : "Returns the total count of Table10 instances.",
+        "operationId" : "countAllTable10s",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "fa16afa4-49df-453b-aac4-c1fea4cdc42b",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllTable10s-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Table10",
+      "x-WM-TAG" : "Table10Controller",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Table10/count"
+    },
+    "/WMSTUDIO/Table10/search" : {
+      "post" : {
+        "tags" : [ "Table10Controller" ],
+        "description" : "Returns the list of Table10 instances matching the search criteria.",
+        "operationId" : "findTable10s",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "0ade6414-179f-4d2c-b8b7-b5df23fab363",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Table10",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "42978152-5acb-4b7b-8c31-3120123088d6",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findTable10s-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Table10",
+      "x-WM-TAG" : "Table10Controller",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Table10/search"
+    },
+    "/WMSTUDIO/Table10/{id:.+}" : {
+      "get" : {
+        "tags" : [ "Table10Controller" ],
+        "description" : "Returns the Table10 instance associated with the given id.",
+        "operationId" : "getTable10",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "a7d46f25-6211-434f-b2d4-cae9b46a4cd9",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Table10",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "f9e6e2b0-11e6-48e7-a825-5122f828612f",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getTable10-1--1405463648"
+      },
+      "post" : {
+        "tags" : [ "Table10Controller" ],
+        "description" : "Updates the Table10 instance associated with the given id.This API should be used when Table10 instance fields that require multipart data.",
+        "operationId" : "editTable10",
+        "consumes" : [ "multipart/form-data" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "d8f868f3-6536-4058-b2f0-b9f3527cda5e",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Table10",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "a030fee4-9740-43cd-9bb4-8832d9a9794c",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editTable10-2-1119959035"
+      },
+      "put" : {
+        "tags" : [ "Table10Controller" ],
+        "description" : "Updates the Table10 instance associated with the given id.",
+        "operationId" : "editTable10",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "2045cea9-0b6b-40a0-b7f5-60d34a3b1015",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "Table10",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Table10",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Table10",
+          "x-WM-UUID" : "ec1f91c8-7e1f-4c37-9a26-a0d030bc0325",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Table10",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "7e549766-8fe0-49c7-b75b-895ec3daf6c1",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editTable10-2--1203758833"
+      },
+      "delete" : {
+        "tags" : [ "Table10Controller" ],
+        "description" : "Deletes the Table10 instance associated with the given id.",
+        "operationId" : "deleteTable10",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "fb806da0-19c9-49c3-8939-6972784f6b07",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "0aa1f65f-589d-4f4d-aecd-55f311777c0f",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteTable10-1--1405463648"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Table10",
+      "x-WM-TAG" : "Table10Controller",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Table10/{id:.+}"
+    },
+    "/WMSTUDIO/Table10/{id}/content/{fieldName}" : {
+      "get" : {
+        "tags" : [ "Table10Controller" ],
+        "description" : "Retrieves content for the given BLOB field in Table10 instance",
+        "operationId" : "getTable10BLOBContent",
+        "produces" : [ "application/octet-stream" ],
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "937af6c3-6936-4aae-8cba-2433269eec43",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "fieldName",
+          "in" : "path",
+          "required" : true,
+          "type" : "string",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.String",
+          "x-WM-UUID" : "7be5886c-728e-4e94-a167-17d9d0e64ce2",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "download",
+          "in" : "query",
+          "required" : true,
+          "type" : "boolean",
+          "collectionFormat" : "multi",
+          "default" : "false",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "boolean",
+          "x-WM-UUID" : "0ff252a8-e0b5-4914-bc6a-e1ff06762fda",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/DownloadResponse",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "892ded63-0932-43f3-96de-19d9b5f0cf0a",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getTable10BLOBContent-5-1737528373"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Table10",
+      "x-WM-TAG" : "Table10Controller",
+      "x-WM-RELATIVE_PATH" : "/{id}/content/{fieldName}",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Table10/{id}/content/{fieldName}"
+    },
+    "/WMSTUDIO/Table9/" : {
+      "get" : {
+        "tags" : [ "Table9Controller" ],
+        "description" : "Returns the list of Table9 instances.",
+        "operationId" : "getTable9s",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Table9",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "ff6071f2-ebe6-4dae-bac3-6ba74607487a",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getTable9s-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "Table9Controller" ],
+        "description" : "Creates a new Table9 instance.",
+        "operationId" : "createTable9",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Table9",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Table9",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Table9",
+          "x-WM-UUID" : "9a7eb564-529c-42aa-a573-8585dd1828c0",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Table9",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "6339b082-6af4-4d36-b04e-761472c292dd",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createTable9-1--23909410"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Table9",
+      "x-WM-TAG" : "Table9Controller",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Table9/"
+    },
+    "/WMSTUDIO/Table9/count" : {
+      "get" : {
+        "tags" : [ "Table9Controller" ],
+        "description" : "Returns the total count of Table9 instances.",
+        "operationId" : "countAllTable9s",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "fac88f3b-f968-4267-adf5-ecb6a68c601f",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllTable9s-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Table9",
+      "x-WM-TAG" : "Table9Controller",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Table9/count"
+    },
+    "/WMSTUDIO/Table9/search" : {
+      "post" : {
+        "tags" : [ "Table9Controller" ],
+        "description" : "Returns the list of Table9 instances matching the search criteria.",
+        "operationId" : "findTable9s",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "cd81d472-82cb-4182-a28a-c0b09dfbcd37",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Table9",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "1be2f718-31c8-47db-b82c-fcac9920e792",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findTable9s-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Table9",
+      "x-WM-TAG" : "Table9Controller",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Table9/search"
+    },
+    "/WMSTUDIO/Table9/{id:.+}" : {
+      "get" : {
+        "tags" : [ "Table9Controller" ],
+        "description" : "Returns the Table9 instance associated with the given id.",
+        "operationId" : "getTable9",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "70ec0239-1972-458e-8f03-b9a2b669480c",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Table9",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "e898087a-6112-4e8c-80ac-c960797cc4b1",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getTable9-1--1405463648"
+      },
+      "put" : {
+        "tags" : [ "Table9Controller" ],
+        "description" : "Updates the Table9 instance associated with the given id.",
+        "operationId" : "editTable9",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "e546b5cb-7d39-434e-99a3-794bb26593e5",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "Table9",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Table9",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Table9",
+          "x-WM-UUID" : "2599b85f-980e-4081-92b2-8b5a639833e1",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Table9",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "62b8456b-4793-4d60-9871-1de3fe2feee9",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editTable9-2--486457463"
+      },
+      "delete" : {
+        "tags" : [ "Table9Controller" ],
+        "description" : "Deletes the Table9 instance associated with the given id.",
+        "operationId" : "deleteTable9",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "76f8aa6e-413f-488d-8d73-f1dc7bb76bf9",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "9ba7c738-7add-4919-aaa6-04f06efb5409",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteTable9-1--1405463648"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Table9",
+      "x-WM-TAG" : "Table9Controller",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Table9/{id:.+}"
+    },
+    "/WMSTUDIO/Testtable/" : {
+      "get" : {
+        "tags" : [ "TesttableController" ],
+        "description" : "Returns the list of Testtable instances.",
+        "operationId" : "getTesttables",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Testtable",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "54292f0b-79ef-493a-b06b-996b5a780837",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getTesttables-1-934028971"
+      },
+      "post" : {
+        "tags" : [ "TesttableController" ],
+        "description" : "Creates a new Testtable instance.",
+        "operationId" : "createTesttable",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "Testtable",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Testtable",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Testtable",
+          "x-WM-UUID" : "7dff56fe-334a-4dbf-a28a-4111c8dbdd71",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Testtable",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "bd88148e-e299-41a6-95b7-933884bf6b74",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "createTesttable-1-1488742643"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Testtable",
+      "x-WM-TAG" : "TesttableController",
+      "x-WM-RELATIVE_PATH" : "/",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Testtable/"
+    },
+    "/WMSTUDIO/Testtable/count" : {
+      "get" : {
+        "tags" : [ "TesttableController" ],
+        "description" : "Returns the total count of Testtable instances.",
+        "operationId" : "countAllTesttables",
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int64"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "5c658e9e-5f5a-4101-a15c-30f74500e566",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "countAllTesttables-0-17"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Testtable",
+      "x-WM-TAG" : "TesttableController",
+      "x-WM-RELATIVE_PATH" : "/count",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Testtable/count"
+    },
+    "/WMSTUDIO/Testtable/search" : {
+      "post" : {
+        "tags" : [ "TesttableController" ],
+        "description" : "Returns the list of Testtable instances matching the search criteria.",
+        "operationId" : "findTesttables",
+        "parameters" : [ {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "in" : "body",
+          "name" : "QueryFilter",
+          "required" : true,
+          "schema" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/QueryFilter",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : false
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.expression.QueryFilter",
+          "x-WM-UUID" : "ab78d2c2-8f6f-40ed-b40c-2f8620fc919b",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Testtable",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "b1543713-036b-493c-b23b-d1c2aafc6f78",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "findTesttables-2--1821969279"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Testtable",
+      "x-WM-TAG" : "TesttableController",
+      "x-WM-RELATIVE_PATH" : "/search",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Testtable/search"
+    },
+    "/WMSTUDIO/Testtable/{id:.+}" : {
+      "get" : {
+        "tags" : [ "TesttableController" ],
+        "description" : "Returns the Testtable instance associated with the given id.",
+        "operationId" : "getTesttable",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "a87cbdc8-dc5f-46e2-bf62-dc9844ec5114",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Testtable",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "fbf59396-6961-4d65-a0da-bc0b1727a38a",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "getTesttable-1--1405463648"
+      },
+      "put" : {
+        "tags" : [ "TesttableController" ],
+        "description" : "Updates the Testtable instance associated with the given id.",
+        "operationId" : "editTesttable",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "4b7d78ba-9c4a-4f2f-b3bf-7eb0f27246bb",
+          "x-WM-EDITABLE" : true
+        }, {
+          "in" : "body",
+          "name" : "Testtable",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/Testtable",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.nwissuesjan25.wmstudio.Testtable",
+          "x-WM-UUID" : "bc64137d-5a65-4aef-beee-25bb46ac61d5",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Testtable",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "b1bb656a-630f-4d32-b232-85aaed842f30",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "editTesttable-2-1026194590"
+      },
+      "delete" : {
+        "tags" : [ "TesttableController" ],
+        "description" : "Deletes the Testtable instance associated with the given id.",
+        "operationId" : "deleteTesttable",
+        "parameters" : [ {
+          "name" : "id",
+          "in" : "path",
+          "required" : true,
+          "type" : "ref",
+          "collectionFormat" : "multi",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.math.BigDecimal",
+          "x-WM-UUID" : "a8e8cf60-bc14-4a87-86a5-837bf9d39cd8",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "boolean"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "8c1e0a34-c8cb-40fa-ac4c-aebf7ddd3cec",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "deleteTesttable-1--1405463648"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/Testtable",
+      "x-WM-TAG" : "TesttableController",
+      "x-WM-RELATIVE_PATH" : "/{id:.+}",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/Testtable/{id:.+}"
+    },
+    "/WMSTUDIO/procedureExecutor/procedure/execute/wm_custom" : {
+      "post" : {
+        "tags" : [ "ProcedureExecutionController" ],
+        "description" : "Process request to execute custom Procedure",
+        "operationId" : "executeWMCustomProcedure",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "CustomProcedure",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CustomProcedure",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.CustomProcedure",
+          "x-WM-UUID" : "461bd071-a53b-4f27-a43c-c2d484766cdc",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Object",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              },
+              "x-WM-IS_LIST" : true
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "9bcb15c2-dedc-4bc5-b0b7-d12a64c74205",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "executeWMCustomProcedure-1--282256460"
+      },
+      "x-WM-BASE_PATH" : "/WMSTUDIO/procedureExecutor",
+      "x-WM-TAG" : "ProcedureExecutionController",
+      "x-WM-RELATIVE_PATH" : "/procedure/execute/wm_custom",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/procedureExecutor/procedure/execute/wm_custom"
+    },
+    "/WMSTUDIO/queryExecutor/queries/getemps" : {
+      "get" : {
+        "tags" : [ "QueryExecutionController" ],
+        "description" : "Process request to execute queries",
+        "operationId" : "executeGetemps",
+        "parameters" : [ {
+          "name" : "empid2",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "collectionFormat" : "multi",
+          "format" : "int32",
+          "x-WM-FULLY_QUALIFIED_TYPE" : "java.lang.Integer",
+          "x-WM-UUID" : "bb4074cf-645e-4662-bfe2-fa3d7ef7cbf8",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Object",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "cd1dc7ac-fc35-49da-a7d9-ca0bc7733e83",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "executeGetemps-2-2141222769"
+      },
+      "x-WM-TAG" : "QueryExecutionController",
+      "x-WM-BASE_PATH" : "/WMSTUDIO/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/queryExecutor/queries/getemps",
+      "x-WM-RELATIVE_PATH" : "/queries/getemps"
+    },
+    "/WMSTUDIO/queryExecutor/queries/wm_custom" : {
+      "post" : {
+        "tags" : [ "QueryExecutionController" ],
+        "description" : "Process request to execute customer queries",
+        "operationId" : "executeWMCustomQuery",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "CustomQuery",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CustomQuery",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.CustomQuery",
+          "x-WM-UUID" : "fc0f63a4-5a9b-41fb-9455-01f28b044cdd",
+          "x-WM-EDITABLE" : true
+        }, {
+          "name" : "page",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "0",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false,
+          "x-WM-RESOLVER" : "org.springframework.data.domain.Pageable"
+        }, {
+          "name" : "size",
+          "in" : "query",
+          "required" : false,
+          "type" : "integer",
+          "default" : "20",
+          "format" : "int32",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "sort",
+          "in" : "query",
+          "required" : false,
+          "type" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/Page",
+              "x-WM-TYPE_ARGUMENTS" : [ {
+                "$ref" : "#/definitions/Object",
+                "x-WM-TYPE_ARGUMENTS" : [ ]
+              } ]
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "acb6f125-d357-40f4-a40e-d4d805b5d34c",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "executeWMCustomQuery-2-107741091"
+      },
+      "x-WM-TAG" : "QueryExecutionController",
+      "x-WM-BASE_PATH" : "/WMSTUDIO/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/queryExecutor/queries/wm_custom",
+      "x-WM-RELATIVE_PATH" : "/queries/wm_custom"
+    },
+    "/WMSTUDIO/queryExecutor/queries/wm_custom_update" : {
+      "post" : {
+        "tags" : [ "QueryExecutionController" ],
+        "description" : "Process request to execute customer queries",
+        "operationId" : "executeWMCustomQuery",
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "CustomQuery",
+          "required" : true,
+          "schema" : {
+            "$ref" : "#/definitions/CustomQuery",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-FULLY_QUALIFIED_TYPE" : "com.wavemaker.runtime.data.model.CustomQuery",
+          "x-WM-UUID" : "16ed8f8c-242c-406d-8a9f-ad95ad9abb5f",
+          "x-WM-EDITABLE" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "type" : "integer",
+              "format" : "int32"
+            }
+          }
+        },
+        "x-WM-OPERATION_UID" : "bdc16dbe-5654-4d6c-a5d9-253468605bcd",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY",
+        "x-WM-METHOD_IDENTIFIER" : "executeWMCustomQuery-1--718813271"
+      },
+      "x-WM-TAG" : "QueryExecutionController",
+      "x-WM-BASE_PATH" : "/WMSTUDIO/queryExecutor",
+      "x-WM-COMPLETE_PATH" : "//WMSTUDIO/queryExecutor/queries/wm_custom_update",
+      "x-WM-RELATIVE_PATH" : "/queries/wm_custom_update"
+    }
+  },
+  "definitions" : {
+    "Jobs" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "jobTitle" : {
+            "type" : "string"
+          },
+          "jobHistories" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/JobHistory",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "minSalary" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "employeeses" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/Employees",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "maxSalary" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "jobId" : {
+            "type" : "string"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.Jobs",
+      "x-WM-TAGS" : [ "LocationsController", "JobsController" ]
+    },
+    "CustomQueryParam" : {
+      "properties" : {
+        "paramValue" : {
+          "$ref" : "#/definitions/Object",
+          "x-WM-TYPE_ARGUMENTS" : [ ]
+        },
+        "paramName" : {
+          "type" : "string"
+        },
+        "paramType" : {
+          "type" : "string"
+        },
+        "isList" : {
+          "type" : "boolean"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.model.CustomQueryParam",
+      "x-WM-TAGS" : [ "QueryExecutionController" ]
+    },
+    "QueryFilter" : {
+      "properties" : {
+        "attributeType" : {
+          "type" : "string",
+          "enum" : [ "BIG_DECIMAL", "BIG_INTEGER", "BLOB", "BOOLEAN", "BYTE", "CALENDAR", "CALENDAR_DATE", "CHARACTER", "CLOB", "CURRENCY", "DATE", "DOUBLE", "FLOAT", "INTEGER", "LOCALE", "STRING", "SHORT", "TEXT", "TIME", "DATETIME", "TIMESTAMP", "TIMEZONE", "TRUE_FALSE", "YES_NO" ]
+        },
+        "filterCondition" : {
+          "type" : "string",
+          "enum" : [ "STARTING_WITH", "ENDING_WITH", "CONTAINING", "EQUALS" ]
+        },
+        "attributeValue" : {
+          "$ref" : "#/definitions/Object",
+          "x-WM-TYPE_ARGUMENTS" : [ ]
+        },
+        "attributeName" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.expression.QueryFilter",
+      "x-WM-TAGS" : [ "LocationsController", "EmpDetailsViewController", "JobHistoryController", "Table9Controller", "DepartmentsController", "JobsController", "RegionsController", "Table10Controller", "TesttableController", "CountriesController", "EmployeesController" ]
+    },
+    "EmpDetailsView" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "managerId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "stateProvince" : {
+            "type" : "string"
+          },
+          "departmentId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "salary" : {
+            "$ref" : "#/definitions/BigDecimal",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "commissionPct" : {
+            "$ref" : "#/definitions/BigDecimal",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "firstName" : {
+            "type" : "string"
+          },
+          "jobTitle" : {
+            "type" : "string"
+          },
+          "employeeId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "countryId" : {
+            "type" : "string"
+          },
+          "lastName" : {
+            "type" : "string"
+          },
+          "countryName" : {
+            "type" : "string"
+          },
+          "jobId" : {
+            "type" : "string"
+          },
+          "regionName" : {
+            "type" : "string"
+          },
+          "locationId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "departmentName" : {
+            "type" : "string"
+          },
+          "city" : {
+            "type" : "string"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.EmpDetailsView",
+      "x-WM-TAGS" : [ "EmpDetailsViewController" ]
+    },
+    "InputStream" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Closeable"
+      }, { } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.io.InputStream",
+      "x-WM-TAGS" : [ "Table10Controller" ]
+    },
+    "CustomProcedureParam" : {
+      "properties" : {
+        "paramValue" : {
+          "$ref" : "#/definitions/Object",
+          "x-WM-TYPE_ARGUMENTS" : [ ]
+        },
+        "paramName" : {
+          "type" : "string"
+        },
+        "valueType" : {
+          "type" : "string"
+        },
+        "procedureParamType" : {
+          "type" : "string",
+          "enum" : [ "IN", "OUT", "IN_OUT" ]
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.model.CustomProcedureParam",
+      "x-WM-TAGS" : [ "ProcedureExecutionController" ]
+    },
+    "Comparable" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.lang.Comparable",
+      "x-WM-TAGS" : [ "LocationsController" ]
+    },
+    "Countries" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "locationses" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/Locations",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "countryId" : {
+            "type" : "string"
+          },
+          "countryName" : {
+            "type" : "string"
+          },
+          "regions" : {
+            "$ref" : "#/definitions/Regions",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.Countries",
+      "x-WM-TAGS" : [ "LocationsController", "RegionsController", "CountriesController" ]
+    },
+    "Downloadable" : {
+      "properties" : {
+        "contents" : {
+          "$ref" : "#/definitions/InputStream",
+          "x-WM-TYPE_ARGUMENTS" : [ ]
+        },
+        "fileName" : {
+          "type" : "string"
+        },
+        "inline" : {
+          "type" : "boolean"
+        },
+        "contentLength" : {
+          "type" : "integer",
+          "format" : "int32"
+        },
+        "contentType" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.file.model.Downloadable",
+      "x-WM-TAGS" : [ "Table10Controller" ]
+    },
+    "Iterable" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.lang.Iterable",
+      "x-WM-TAGS" : [ "LocationsController" ]
+    },
+    "Table10" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "column2" : {
+            "$ref" : "#/definitions/Blob",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "id" : {
+            "$ref" : "#/definitions/BigDecimal",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.Table10",
+      "x-WM-TAGS" : [ "Table10Controller" ]
+    },
+    "Page" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Slice"
+      }, {
+        "properties" : {
+          "size" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "numberOfElements" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "totalPages" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "first" : {
+            "type" : "boolean"
+          },
+          "totalElements" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "number" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "sort" : {
+            "$ref" : "#/definitions/Sort",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "content" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Object",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "last" : {
+            "type" : "boolean"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Page",
+      "x-WM-TAGS" : [ "LocationsController", "EmpDetailsViewController", "JobHistoryController", "QueryExecutionController", "Table9Controller", "DepartmentsController", "JobsController", "RegionsController", "Table10Controller", "TesttableController", "CountriesController", "EmployeesController" ]
+    },
+    "Departments" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "employeesesForDepartmentId" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/Employees",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "departmentId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "departmentName" : {
+            "type" : "string"
+          },
+          "employeesByManagerId" : {
+            "$ref" : "#/definitions/Employees",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "jobHistories" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/JobHistory",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "locations" : {
+            "$ref" : "#/definitions/Locations",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.Departments",
+      "x-WM-TAGS" : [ "LocationsController", "DepartmentsController", "EmployeesController" ]
+    },
+    "BigDecimal" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Number"
+      }, {
+        "$ref" : "#/definitions/Comparable"
+      }, {
+        "properties" : {
+          "intVal" : {
+            "$ref" : "#/definitions/BigInteger",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "stringCache" : {
+            "type" : "string"
+          },
+          "scale" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "intCompact" : {
+            "type" : "integer",
+            "format" : "int64"
+          },
+          "precision" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.math.BigDecimal",
+      "x-WM-TAGS" : [ "LocationsController", "EmpDetailsViewController", "Table9Controller", "RegionsController", "Table10Controller", "TesttableController" ]
+    },
+    "AutoCloseable" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.lang.AutoCloseable",
+      "x-WM-TAGS" : [ "Table10Controller" ]
+    },
+    "Serializable" : {
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.io.Serializable",
+      "x-WM-TAGS" : [ "LocationsController", "EmpDetailsViewController", "Table9Controller", "Table10Controller", "TesttableController" ]
+    },
+    "CustomQuery" : {
+      "properties" : {
+        "queryStr" : {
+          "type" : "string"
+        },
+        "nativeSql" : {
+          "type" : "boolean"
+        },
+        "queryParams" : {
+          "type" : "array",
+          "uniqueItems" : false,
+          "items" : {
+            "$ref" : "#/definitions/CustomQueryParam",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.model.CustomQuery",
+      "x-WM-TAGS" : [ "QueryExecutionController" ]
+    },
+    "DownloadResponse" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Downloadable"
+      }, {
+        "properties" : {
+          "contentType" : {
+            "type" : "string"
+          },
+          "fileName" : {
+            "type" : "string"
+          },
+          "inline" : {
+            "type" : "boolean"
+          },
+          "contents" : {
+            "$ref" : "#/definitions/InputStream",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.file.model.DownloadResponse",
+      "x-WM-TAGS" : [ "Table10Controller" ]
+    },
+    "Sort" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Iterable"
+      }, {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "orders" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Sort$Order",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Sort",
+      "x-WM-TAGS" : [ "LocationsController" ]
+    },
+    "Blob" : {
+      "properties" : {
+        "binaryStream" : {
+          "$ref" : "#/definitions/InputStream",
+          "x-WM-TYPE_ARGUMENTS" : [ ]
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.sql.Blob",
+      "x-WM-TAGS" : [ "Table10Controller" ]
+    },
+    "Number" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, { } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.lang.Number",
+      "x-WM-TAGS" : [ "LocationsController" ]
+    },
+    "Locations" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "streetAddress" : {
+            "type" : "string"
+          },
+          "postalCode" : {
+            "type" : "string"
+          },
+          "countries" : {
+            "$ref" : "#/definitions/Countries",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "departmentses" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/Departments",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "city" : {
+            "type" : "string"
+          },
+          "stateProvince" : {
+            "type" : "string"
+          },
+          "locationId" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.Locations",
+      "x-WM-TAGS" : [ "LocationsController", "CountriesController" ]
+    },
+    "Employees" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "salary" : {
+            "$ref" : "#/definitions/BigDecimal",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "commissionPct" : {
+            "$ref" : "#/definitions/BigDecimal",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "firstName" : {
+            "type" : "string"
+          },
+          "jobHistories" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/JobHistory",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "employeesByManagerId" : {
+            "$ref" : "#/definitions/Employees",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "departmentsesForManagerId" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/Departments",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "departmentsByDepartmentId" : {
+            "$ref" : "#/definitions/Departments",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "phoneNumber" : {
+            "type" : "string"
+          },
+          "email" : {
+            "type" : "string"
+          },
+          "hireDate" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "employeeId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "lastName" : {
+            "type" : "string"
+          },
+          "jobs" : {
+            "$ref" : "#/definitions/Jobs",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "employeesesForManagerId" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/Employees",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.Employees",
+      "x-WM-TAGS" : [ "LocationsController", "DepartmentsController", "JobsController", "EmployeesController" ]
+    },
+    "Sort$Order" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "direction" : {
+            "type" : "string",
+            "enum" : [ "ASC", "DESC" ]
+          },
+          "nullHandling" : {
+            "type" : "string",
+            "enum" : [ "NATIVE", "NULLS_FIRST", "NULLS_LAST" ]
+          },
+          "ignoreCase" : {
+            "type" : "boolean"
+          },
+          "property" : {
+            "type" : "string"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Sort.Order",
+      "x-WM-TAGS" : [ "LocationsController" ]
+    },
+    "Regions" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "regionName" : {
+            "type" : "string"
+          },
+          "countrieses" : {
+            "type" : "array",
+            "uniqueItems" : true,
+            "items" : {
+              "$ref" : "#/definitions/Countries",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "regionId" : {
+            "$ref" : "#/definitions/BigDecimal",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.Regions",
+      "x-WM-TAGS" : [ "LocationsController", "RegionsController" ]
+    },
+    "Closeable" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/AutoCloseable"
+      }, { } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.io.Closeable",
+      "x-WM-TAGS" : [ "Table10Controller" ]
+    },
+    "BigInteger" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Number"
+      }, {
+        "$ref" : "#/definitions/Comparable"
+      }, {
+        "properties" : {
+          "bitCount" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "signum" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "lowestSetBit" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "mag" : {
+            "type" : "array",
+            "items" : {
+              "type" : "integer",
+              "format" : "int32"
+            }
+          },
+          "firstNonzeroIntNum" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "bitLength" : {
+            "type" : "integer",
+            "format" : "int32"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "java.math.BigInteger",
+      "x-WM-TAGS" : [ "LocationsController" ]
+    },
+    "Slice" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Iterable"
+      }, {
+        "properties" : {
+          "size" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "numberOfElements" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "first" : {
+            "type" : "boolean"
+          },
+          "number" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "sort" : {
+            "$ref" : "#/definitions/Sort",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "content" : {
+            "type" : "array",
+            "items" : {
+              "$ref" : "#/definitions/Object",
+              "x-WM-TYPE_ARGUMENTS" : [ ]
+            },
+            "x-WM-IS_LIST" : true
+          },
+          "last" : {
+            "type" : "boolean"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "org.springframework.data.domain.Slice",
+      "x-WM-TAGS" : [ "LocationsController" ]
+    },
+    "CustomProcedure" : {
+      "properties" : {
+        "procedureStr" : {
+          "type" : "string"
+        },
+        "procedureParams" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/CustomProcedureParam",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "x-WM-IS_LIST" : true
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.wavemaker.runtime.data.model.CustomProcedure",
+      "x-WM-TAGS" : [ "ProcedureExecutionController" ]
+    },
+    "Testtable" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "myTimestampTimezone" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "timeStampLtz" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "myDate" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "pkcolumn" : {
+            "$ref" : "#/definitions/BigDecimal",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "nrmlTimestmp" : {
+            "type" : "string",
+            "format" : "date"
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.Testtable",
+      "x-WM-TAGS" : [ "TesttableController" ]
+    },
+    "Table9" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "id" : {
+            "$ref" : "#/definitions/BigDecimal",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "column2" : {
+            "$ref" : "#/definitions/BigDecimal",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.Table9",
+      "x-WM-TAGS" : [ "Table9Controller" ]
+    },
+    "JobHistory" : {
+      "allOf" : [ {
+        "$ref" : "#/definitions/Serializable"
+      }, {
+        "properties" : {
+          "jobs" : {
+            "$ref" : "#/definitions/Jobs",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "startDate" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "employeeId" : {
+            "type" : "integer",
+            "format" : "int32"
+          },
+          "endDate" : {
+            "type" : "string",
+            "format" : "date"
+          },
+          "departments" : {
+            "$ref" : "#/definitions/Departments",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          },
+          "employees" : {
+            "$ref" : "#/definitions/Employees",
+            "x-WM-TYPE_ARGUMENTS" : [ ]
+          }
+        }
+      } ],
+      "x-WM-FULLY_QUALIFIED_NAME" : "com.nwissuesjan25.wmstudio.JobHistory",
+      "x-WM-TAGS" : [ "LocationsController", "JobHistoryController", "DepartmentsController", "JobsController", "EmployeesController" ]
+    }
+  }
+}

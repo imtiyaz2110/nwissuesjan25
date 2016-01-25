@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.nwissuesjan25.wmstudio">
+  <class table="`TESTTABLE`" name="com.nwissuesjan25.wmstudio.Testtable" entity-name="com.nwissuesjan25.wmstudio.Testtable" schema="HR">
+    <id name="pkcolumn" type="big_decimal">
+      <column name="`PKCOLUMN`" length="255" not-null="true" precision="19"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="myDate" type="date">
+      <column name="`MY_DATE`" length="255" not-null="false" precision="19"/>
+    </property>
+    <property name="myTimestampTimezone" type="timestamp">
+      <column name="`MY_TIMESTAMP_TIMEZONE`" length="11" not-null="false" precision="19"/>
+    </property>
+    <property name="nrmlTimestmp" type="timestamp">
+      <column name="`NRML_TIMESTMP`" length="11" not-null="false" precision="19"/>
+    </property>
+    <property name="timeStampLtz" type="timestamp">
+      <column name="`TIME_STAMP_LTZ`" length="11" not-null="false" precision="19"/>
+    </property>
+  </class>
+  <class table="`REGIONS`" name="com.nwissuesjan25.wmstudio.Regions" entity-name="com.nwissuesjan25.wmstudio.Regions" schema="HR">
+    <id name="regionId" type="big_decimal">
+      <column name="`REGION_ID`" length="255" not-null="true"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="regionName" type="string">
+      <column name="`REGION_NAME`" length="25" not-null="false" precision="19"/>
+    </property>
+    <set name="countrieses" table="COUNTRIES" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`REGION_ID`"/>
+      </key>
+      <one-to-many class="Countries"/>
+    </set>
+  </class>
+  <class table="`EMP_DETAILS_VIEW`" name="com.nwissuesjan25.wmstudio.EmpDetailsView" entity-name="com.nwissuesjan25.wmstudio.EmpDetailsView" schema="HR">
+    <composite-id mapped="true" class="EmpDetailsViewId">
+      <key-property name="employeeId" type="integer">
+        <column name="`EMPLOYEE_ID`" length="255" not-null="true" precision="6"/>
+      </key-property>
+      <key-property name="jobId" type="string">
+        <column name="`JOB_ID`" length="10" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="managerId" type="integer">
+        <column name="`MANAGER_ID`" length="255" not-null="false" precision="6"/>
+      </key-property>
+      <key-property name="departmentId" type="java.lang.Short">
+        <column name="`DEPARTMENT_ID`" length="255" not-null="false" precision="4"/>
+      </key-property>
+      <key-property name="locationId" type="java.lang.Short">
+        <column name="`LOCATION_ID`" length="255" not-null="false" precision="4"/>
+      </key-property>
+      <key-property name="countryId" type="string">
+        <column name="`COUNTRY_ID`" length="2" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="firstName" type="string">
+        <column name="`FIRST_NAME`" length="20" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="lastName" type="string">
+        <column name="`LAST_NAME`" length="25" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="salary" type="big_decimal">
+        <column name="`SALARY`" length="255" not-null="false" precision="8"/>
+      </key-property>
+      <key-property name="commissionPct" type="big_decimal">
+        <column name="`COMMISSION_PCT`" length="255" not-null="false" precision="2"/>
+      </key-property>
+      <key-property name="departmentName" type="string">
+        <column name="`DEPARTMENT_NAME`" length="30" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="jobTitle" type="string">
+        <column name="`JOB_TITLE`" length="35" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="city" type="string">
+        <column name="`CITY`" length="30" not-null="true" precision="19"/>
+      </key-property>
+      <key-property name="stateProvince" type="string">
+        <column name="`STATE_PROVINCE`" length="25" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="countryName" type="string">
+        <column name="`COUNTRY_NAME`" length="40" not-null="false" precision="19"/>
+      </key-property>
+      <key-property name="regionName" type="string">
+        <column name="`REGION_NAME`" length="25" not-null="false" precision="19"/>
+      </key-property>
+    </composite-id>
+  </class>
+  <class table="`JOB_HISTORY`" name="com.nwissuesjan25.wmstudio.JobHistory" entity-name="com.nwissuesjan25.wmstudio.JobHistory" schema="HR">
+    <composite-id mapped="true" class="JobHistoryId">
+      <key-property name="employeeId" type="integer">
+        <column name="`EMPLOYEE_ID`" length="255" not-null="true" precision="6"/>
+      </key-property>
+      <key-property name="startDate" type="date">
+        <column name="`START_DATE`" length="255" not-null="true" precision="19"/>
+      </key-property>
+    </composite-id>
+    <property name="endDate" type="date">
+      <column name="`END_DATE`" length="255" not-null="true" precision="19"/>
+    </property>
+    <many-to-one
+      name="departments"
+      class="Departments"
+      fetch="select">
+      <meta attribute="mapping-DEPARTMENT_ID">
+        DEPARTMENT_ID
+      </meta>
+      <column name="`DEPARTMENT_ID`" length="255" not-null="false" precision="4"/>
+    </many-to-one>
+    <many-to-one
+      name="employees"
+      class="Employees"
+      fetch="select"
+      update="false"
+      insert="false">
+      <meta attribute="mapping-EMPLOYEE_ID">
+        EMPLOYEE_ID
+      </meta>
+      <meta attribute="setter-override">
+        this.employeeId = employees.getEmployeeId();
+      </meta>
+      <column name="`EMPLOYEE_ID`" length="255" not-null="true" precision="6"/>
+    </many-to-one>
+    <many-to-one
+      name="jobs"
+      class="Jobs"
+      fetch="select">
+      <meta attribute="mapping-JOB_ID">
+        JOB_ID
+      </meta>
+      <column name="`JOB_ID`" length="10" not-null="true" precision="19"/>
+    </many-to-one>
+  </class>
+  <class table="`COUNTRIES`" name="com.nwissuesjan25.wmstudio.Countries" entity-name="com.nwissuesjan25.wmstudio.Countries" schema="HR">
+    <id name="countryId" type="string">
+      <column name="`COUNTRY_ID`" length="2" not-null="true" precision="19"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="countryName" type="string">
+      <column name="`COUNTRY_NAME`" length="40" not-null="false" precision="19"/>
+    </property>
+    <many-to-one
+      name="regions"
+      class="Regions"
+      fetch="select">
+      <meta attribute="mapping-REGION_ID">
+        REGION_ID
+      </meta>
+      <column name="`REGION_ID`" length="255" not-null="false"/>
+    </many-to-one>
+    <set name="locationses" table="LOCATIONS" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`COUNTRY_ID`"/>
+      </key>
+      <one-to-many class="Locations"/>
+    </set>
+  </class>
+  <class table="`LOCATIONS`" name="com.nwissuesjan25.wmstudio.Locations" entity-name="com.nwissuesjan25.wmstudio.Locations" schema="HR">
+    <id name="locationId" type="short">
+      <column name="`LOCATION_ID`" length="255" not-null="true" precision="4"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="streetAddress" type="string">
+      <column name="`STREET_ADDRESS`" length="40" not-null="false" precision="19"/>
+    </property>
+    <property name="postalCode" type="string">
+      <column name="`POSTAL_CODE`" length="12" not-null="false" precision="19"/>
+    </property>
+    <property name="city" type="string">
+      <column name="`CITY`" length="30" not-null="true" precision="19"/>
+    </property>
+    <property name="stateProvince" type="string">
+      <column name="`STATE_PROVINCE`" length="25" not-null="false" precision="19"/>
+    </property>
+    <many-to-one
+      name="countries"
+      class="Countries"
+      fetch="select">
+      <meta attribute="mapping-COUNTRY_ID">
+        COUNTRY_ID
+      </meta>
+      <column name="`COUNTRY_ID`" length="2" not-null="false" precision="19"/>
+    </many-to-one>
+    <set name="departmentses" table="DEPARTMENTS" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`LOCATION_ID`"/>
+      </key>
+      <one-to-many class="Departments"/>
+    </set>
+  </class>
+  <class table="`TABLE9`" name="com.nwissuesjan25.wmstudio.Table9" entity-name="com.nwissuesjan25.wmstudio.Table9" schema="HR">
+    <id name="id" type="big_decimal">
+      <column name="`ID`" length="255" not-null="true" precision="19"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="column2" type="big_decimal">
+      <column name="`COLUMN2`" length="255" not-null="false" precision="19"/>
+    </property>
+  </class>
+  <class table="`TABLE10`" name="com.nwissuesjan25.wmstudio.Table10" entity-name="com.nwissuesjan25.wmstudio.Table10" schema="HR">
+    <id name="id" type="big_decimal">
+      <column name="`ID`" length="255" not-null="true" precision="19"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="column2" type="blob">
+      <column name="`COLUMN2`" length="255" not-null="false" precision="19"/>
+    </property>
+  </class>
+  <class table="`EMPLOYEES`" name="com.nwissuesjan25.wmstudio.Employees" entity-name="com.nwissuesjan25.wmstudio.Employees" schema="HR">
+    <id name="employeeId" type="integer">
+      <column name="`EMPLOYEE_ID`" length="255" not-null="true" precision="6"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="firstName" type="string">
+      <column name="`FIRST_NAME`" length="20" not-null="false" precision="19"/>
+    </property>
+    <property name="lastName" type="string">
+      <column name="`LAST_NAME`" length="25" not-null="true" precision="19"/>
+    </property>
+    <property name="email" type="string">
+      <column name="`EMAIL`" length="25" not-null="true" precision="19"/>
+    </property>
+    <property name="phoneNumber" type="string">
+      <column name="`PHONE_NUMBER`" length="20" not-null="false" precision="19"/>
+    </property>
+    <property name="hireDate" type="date">
+      <column name="`HIRE_DATE`" length="255" not-null="true" precision="19"/>
+    </property>
+    <property name="salary" type="big_decimal">
+      <column name="`SALARY`" length="255" not-null="false" precision="8"/>
+    </property>
+    <property name="commissionPct" type="big_decimal">
+      <column name="`COMMISSION_PCT`" length="255" not-null="false" precision="2"/>
+    </property>
+    <set name="jobHistories" table="JOB_HISTORY" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`EMPLOYEE_ID`"/>
+      </key>
+      <one-to-many class="JobHistory"/>
+    </set>
+    <many-to-one
+      name="departmentsByDepartmentId"
+      class="Departments"
+      fetch="select">
+      <meta attribute="mapping-DEPARTMENT_ID">
+        DEPARTMENT_ID
+      </meta>
+      <column name="`DEPARTMENT_ID`" length="255" not-null="false" precision="4"/>
+    </many-to-one>
+    <many-to-one
+      name="employeesByManagerId"
+      class="Employees"
+      fetch="select">
+      <meta attribute="mapping-MANAGER_ID">
+        EMPLOYEE_ID
+      </meta>
+      <meta attribute="ignore-properties">
+        &quot;employeesByManagerId&quot;, &quot;employeesesForManagerId&quot;
+      </meta>
+      <column name="`MANAGER_ID`" length="255" not-null="false" precision="6"/>
+    </many-to-one>
+    <set name="employeesesForManagerId" table="EMPLOYEES" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`MANAGER_ID`"/>
+      </key>
+      <one-to-many class="Employees"/>
+    </set>
+    <many-to-one
+      name="jobs"
+      class="Jobs"
+      fetch="select">
+      <meta attribute="mapping-JOB_ID">
+        JOB_ID
+      </meta>
+      <column name="`JOB_ID`" length="10" not-null="true" precision="19"/>
+    </many-to-one>
+    <set name="departmentsesForManagerId" table="DEPARTMENTS" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`MANAGER_ID`"/>
+      </key>
+      <one-to-many class="Departments"/>
+    </set>
+  </class>
+  <class table="`DEPARTMENTS`" name="com.nwissuesjan25.wmstudio.Departments" entity-name="com.nwissuesjan25.wmstudio.Departments" schema="HR">
+    <id name="departmentId" type="short">
+      <column name="`DEPARTMENT_ID`" length="255" not-null="true" precision="4"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="departmentName" type="string">
+      <column name="`DEPARTMENT_NAME`" length="30" not-null="true" precision="19"/>
+    </property>
+    <set name="jobHistories" table="JOB_HISTORY" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`DEPARTMENT_ID`"/>
+      </key>
+      <one-to-many class="JobHistory"/>
+    </set>
+    <set name="employeesesForDepartmentId" table="EMPLOYEES" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`DEPARTMENT_ID`"/>
+      </key>
+      <one-to-many class="Employees"/>
+    </set>
+    <many-to-one
+      name="employeesByManagerId"
+      class="Employees"
+      fetch="select">
+      <meta attribute="mapping-MANAGER_ID">
+        EMPLOYEE_ID
+      </meta>
+      <column name="`MANAGER_ID`" length="255" not-null="false" precision="6"/>
+    </many-to-one>
+    <many-to-one
+      name="locations"
+      class="Locations"
+      fetch="select">
+      <meta attribute="mapping-LOCATION_ID">
+        LOCATION_ID
+      </meta>
+      <column name="`LOCATION_ID`" length="255" not-null="false" precision="4"/>
+    </many-to-one>
+  </class>
+  <class table="`JOBS`" name="com.nwissuesjan25.wmstudio.Jobs" entity-name="com.nwissuesjan25.wmstudio.Jobs" schema="HR">
+    <id name="jobId" type="string">
+      <column name="`JOB_ID`" length="10" not-null="true" precision="19"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="jobTitle" type="string">
+      <column name="`JOB_TITLE`" length="35" not-null="true" precision="19"/>
+    </property>
+    <property name="minSalary" type="integer">
+      <column name="`MIN_SALARY`" length="255" not-null="false" precision="6"/>
+    </property>
+    <property name="maxSalary" type="integer">
+      <column name="`MAX_SALARY`" length="255" not-null="false" precision="6"/>
+    </property>
+    <set name="jobHistories" table="JOB_HISTORY" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`JOB_ID`"/>
+      </key>
+      <one-to-many class="JobHistory"/>
+    </set>
+    <set name="employeeses" table="EMPLOYEES" inverse="true" lazy="true" fetch="select">
+      <key>
+        <column name="`JOB_ID`"/>
+      </key>
+      <one-to-many class="Employees"/>
+    </set>
+  </class>
+</hibernate-mapping>
