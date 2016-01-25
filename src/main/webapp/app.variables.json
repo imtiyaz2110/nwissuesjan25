@@ -707,6 +707,7 @@
         "relatedEntityName" : "Departments",
         "relatedFieldName" : "departmentsByDepartmentId.departmentId",
         "isList" : false,
+        "disableInlineEditing" : "true",
         "targetTable" : "DEPARTMENTS",
         "columns" : [ {
           "fieldName" : "employeesByManagerId",
@@ -719,6 +720,7 @@
           "length" : 255,
           "generator" : "assigned",
           "isRelated" : true,
+          "disableInlineEditing" : "true",
           "targetTable" : "EMPLOYEES"
         }, {
           "fieldName" : "locations",
@@ -731,6 +733,7 @@
           "length" : 255,
           "generator" : "assigned",
           "isRelated" : true,
+          "disableInlineEditing" : "true",
           "targetTable" : "LOCATIONS"
         }, {
           "fieldName" : "departmentId",
@@ -743,7 +746,8 @@
           "length" : 255,
           "precision" : 4,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "isRelatedPk" : "true"
         }, {
           "fieldName" : "departmentName",
           "type" : "string",
@@ -755,7 +759,8 @@
           "length" : 30,
           "precision" : 19,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         } ]
       }, {
         "fieldName" : "employeesByManagerId",
@@ -772,6 +777,7 @@
         "relatedEntityName" : "Employees",
         "relatedFieldName" : "employeesByManagerId.employeeId",
         "isList" : false,
+        "disableInlineEditing" : "true",
         "targetTable" : "EMPLOYEES",
         "columns" : [ {
           "fieldName" : "departmentsByDepartmentId",
@@ -788,6 +794,7 @@
           "relatedEntityName" : "Departments",
           "relatedFieldName" : "departmentsByDepartmentId.departmentId",
           "isList" : false,
+          "disableInlineEditing" : "true",
           "targetTable" : "DEPARTMENTS",
           "columns" : [ {
             "fieldName" : "employeesByManagerId",
@@ -800,6 +807,7 @@
             "length" : 255,
             "generator" : "assigned",
             "isRelated" : true,
+            "disableInlineEditing" : "true",
             "targetTable" : "EMPLOYEES"
           }, {
             "fieldName" : "locations",
@@ -812,6 +820,7 @@
             "length" : 255,
             "generator" : "assigned",
             "isRelated" : true,
+            "disableInlineEditing" : "true",
             "targetTable" : "LOCATIONS"
           }, {
             "fieldName" : "departmentId",
@@ -824,7 +833,8 @@
             "length" : 255,
             "precision" : 4,
             "generator" : "assigned",
-            "isRelated" : false
+            "isRelated" : false,
+            "isRelatedPk" : "true"
           }, {
             "fieldName" : "departmentName",
             "type" : "string",
@@ -836,7 +846,8 @@
             "length" : 30,
             "precision" : 19,
             "generator" : "assigned",
-            "isRelated" : false
+            "isRelated" : false,
+            "disableInlineEditing" : "true"
           } ]
         }, {
           "fieldName" : "employeesByManagerId",
@@ -851,6 +862,7 @@
           "isRelated" : true,
           "relatedTableName" : "EMPLOYEES",
           "relatedEntityName" : "Employees",
+          "disableInlineEditing" : "true",
           "targetTable" : "EMPLOYEES"
         }, {
           "fieldName" : "jobs",
@@ -865,6 +877,7 @@
           "isRelated" : true,
           "relatedTableName" : "JOBS",
           "relatedEntityName" : "Jobs",
+          "disableInlineEditing" : "true",
           "targetTable" : "JOBS"
         }, {
           "fieldName" : "employeeId",
@@ -877,7 +890,8 @@
           "length" : 255,
           "precision" : 6,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "isRelatedPk" : "true"
         }, {
           "fieldName" : "firstName",
           "type" : "string",
@@ -889,7 +903,8 @@
           "length" : 20,
           "precision" : 19,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         }, {
           "fieldName" : "lastName",
           "type" : "string",
@@ -901,7 +916,8 @@
           "length" : 25,
           "precision" : 19,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         }, {
           "fieldName" : "email",
           "type" : "string",
@@ -913,7 +929,8 @@
           "length" : 25,
           "precision" : 19,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         }, {
           "fieldName" : "phoneNumber",
           "type" : "string",
@@ -925,7 +942,8 @@
           "length" : 20,
           "precision" : 19,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         }, {
           "fieldName" : "hireDate",
           "type" : "datetime",
@@ -937,7 +955,8 @@
           "length" : 255,
           "precision" : 19,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         }, {
           "fieldName" : "salary",
           "type" : "big_decimal",
@@ -949,7 +968,8 @@
           "length" : 255,
           "precision" : 8,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         }, {
           "fieldName" : "commissionPct",
           "type" : "big_decimal",
@@ -961,7 +981,8 @@
           "length" : 255,
           "precision" : 2,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         } ]
       }, {
         "fieldName" : "jobs",
@@ -978,6 +999,7 @@
         "relatedEntityName" : "Jobs",
         "relatedFieldName" : "jobs.jobId",
         "isList" : false,
+        "disableInlineEditing" : "true",
         "targetTable" : "JOBS",
         "columns" : [ {
           "fieldName" : "jobId",
@@ -990,7 +1012,8 @@
           "length" : 10,
           "precision" : 19,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "isRelatedPk" : "true"
         }, {
           "fieldName" : "jobTitle",
           "type" : "string",
@@ -1002,7 +1025,8 @@
           "length" : 35,
           "precision" : 19,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         }, {
           "fieldName" : "minSalary",
           "type" : "integer",
@@ -1014,7 +1038,8 @@
           "length" : 255,
           "precision" : 6,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         }, {
           "fieldName" : "maxSalary",
           "type" : "integer",
@@ -1026,7 +1051,8 @@
           "length" : 255,
           "precision" : 6,
           "generator" : "assigned",
-          "isRelated" : false
+          "isRelated" : false,
+          "disableInlineEditing" : "true"
         } ]
       }, {
         "fieldName" : "employeeId",
